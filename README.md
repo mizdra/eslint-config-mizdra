@@ -15,11 +15,7 @@ module.exports = {
     'mizdra',
     'mizdra/+typescript',
     'mizdra/+react',
-
-    // prettier
-    'plugin:prettier/recommended',
-    'prettier/@typescript-eslint',
-    'prettier/react',
+    'mizdra/+prettier',
   ],
   env: {
     node: true, // for jest
