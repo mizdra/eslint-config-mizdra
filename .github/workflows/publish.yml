@@ -19,7 +19,7 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 14.x
-          registry-url: 'https://npm.pkg.github.com'
+          registry-url: 'https://registry.npmjs.org'
 
       - name: install
         run: yarn install
@@ -31,7 +31,7 @@ jobs:
         run: |
           npx can-npm-publish --verbose && npm publish || echo "Does not publish"
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
       # まだ tag がないバージョンなら tag を push する
       - name: package-version-to-git-tag
         uses: pkgdeps/action-package-version-to-git-tag@v1
