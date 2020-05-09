@@ -1,20 +1,38 @@
 {
-  "name": "eslint-config-mizdra",
-  "version": "0.0.0",
+  "name": "@mizdra/eslint-config-mizdra",
+  "version": "0.0.1",
   "description": "ESLint config for @mizdra",
   "main": "index.js",
   "repository": "https://github.com/mizdra/eslint-config-mizdra",
   "author": "mizdra <pp.mizdra@gmail.com>",
   "license": "MIT",
   "private": false,
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://npm.pkg.github.com/"
+  },
   "scripts": {
     "check": "run-p -l -c 'check:eslint --color' check:prettier",
     "check:eslint": "eslint '**/*.js'",
     "check:prettier": "prettier --check ."
   },
+  "engines": {
+    "node": ">=10.0.0",
+    "npm": ">=6.11.0",
+    "yarn": ">=1.13.0"
+  },
   "peerDependencies": {
-    "eslint": "^7.0.0",
-    "prettier": "^2.0.5"
+    "eslint": "^6.8.0",
+    "prettier": "~2.0.5",
+    "typescript": "^3.8.3"
+  },
+  "peerDependenciesMeta": {
+    "prettier": {
+      "optional": true
+    },
+    "typescript": {
+      "optional": true
+    }
   },
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "^2.31.0",
@@ -26,8 +44,9 @@
     "eslint-plugin-react-hooks": "^4.0.0"
   },
   "devDependencies": {
-    "eslint": "^7.0.0",
+    "eslint": "^6.8.0",
     "npm-run-all": "^4.1.5",
-    "prettier": "~2.0.5"
+    "prettier": "~2.0.5",
+    "typescript": "^3.8.3"
   }
 }
