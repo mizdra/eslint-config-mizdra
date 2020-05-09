@@ -27,3 +27,13 @@ module.exports = {
   },
 };
 ```
+
+## Release
+
+```console
+$ git switch develop
+$ yarn version
+$ git push --tags
+$ gh pr create --web --base master --title "Release vX.X.X"
+## When you merge PR, the package will be published automatically
+```
