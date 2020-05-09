@@ -18,9 +18,10 @@ module.exports = {
   rules: {
     // eslint
     'no-console': 0,
-    'func-style': [2, 'declaration', { allowArrowFunctions: true }],
     'no-var': 2,
+    'func-style': [2, 'declaration', { allowArrowFunctions: true }],
     'prefer-const': 2,
+    semi: [2, 'always'],
 
     // import
     // default export は tsserver と相性が悪いので禁止する
