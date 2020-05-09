@@ -6,5 +6,15 @@
   "repository": "https://github.com/mizdra/eslint-config-mizdra",
   "author": "mizdra <pp.mizdra@gmail.com>",
   "license": "MIT",
-  "private": false
+  "private": false,
+  "peerDependencies": {
+    "eslint": "^7.0.0"
+  },
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^2.31.0",
+    "@typescript-eslint/parser": "^2.31.0",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-react": "^7.19.0",
+    "eslint-plugin-react-hooks": "^4.0.0"
+  }
 }
