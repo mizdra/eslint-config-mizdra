@@ -13,10 +13,10 @@ module.exports = {
   root: true,
   extends: [
     // basic
-    'mizdra',
-    'mizdra/+typescript',
-    'mizdra/+react',
-    'mizdra/+prettier',
+    '@mizdra/mizdra',
+    '@mizdra/mizdra/+typescript',
+    '@mizdra/mizdra/+react',
+    '@mizdra/mizdra/+prettier',
   ],
   env: {
     node: true, // for jest
