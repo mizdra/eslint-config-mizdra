@@ -12,6 +12,11 @@
     "check:eslint": "eslint '**/*.js'",
     "check:prettier": "prettier --check ."
   },
+  "engines": {
+    "node": ">=10.0.0",
+    "npm": ">=6.11.0",
+    "yarn": ">=1.13.0"
+  },
   "peerDependencies": {
     "eslint": "^6.8.0",
     "prettier": "~2.0.5",
