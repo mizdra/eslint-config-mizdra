@@ -1,6 +1,6 @@
 {
   "name": "@mizdra/eslint-config-mizdra",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "ESLint config for @mizdra",
   "main": "index.js",
   "repository": "https://github.com/mizdra/eslint-config-mizdra",
@@ -48,5 +48,8 @@
     "npm-run-all": "^4.1.5",
     "prettier": "~2.0.5",
     "typescript": "^3.8.3"
-  }
+  },
+  "files": [
+    "*.js"
+  ]
 }
