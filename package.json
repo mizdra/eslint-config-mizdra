@@ -1,5 +1,5 @@
 {
-  "name": "eslint-config-mizdra",
+  "name": "@mizdra/eslint-config-mizdra",
   "version": "0.0.0",
   "description": "ESLint config for @mizdra",
   "main": "index.js",
@@ -7,6 +7,10 @@
   "author": "mizdra <pp.mizdra@gmail.com>",
   "license": "MIT",
   "private": false,
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://npm.pkg.github.com/"
+  },
   "scripts": {
     "check": "run-p -l -c 'check:eslint --color' check:prettier",
     "check:eslint": "eslint '**/*.js'",
