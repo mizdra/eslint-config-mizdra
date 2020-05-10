@@ -1,4 +1,4 @@
-name: Check dependencies
+name: Check unmet versions of peerDependencies
 
 on:
   push:
@@ -27,9 +27,11 @@ jobs:
       - name: Install fail-on-stderr
         run: go get github.com/pocke/fail-on-stderr
 
+      - name: Install install-peerdeps
+        run: npm i -g install-peerdeps
+
       - name: yarn policies set-version ${{ matrix.yarn }}
         run: yarn policies set-version ${{ matrix.yarn }}
 
-      # ref: https://github.com/yarnpkg/yarn/issues/4594
-      - name: yarn install --frozen-lockfile
-        run: fail-on-stderr yarn install --frozen-lockfile --json
+      - name: Run fixture test
+        run: sh ./test/fixture/test.sh
