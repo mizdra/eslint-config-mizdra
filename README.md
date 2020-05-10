@@ -2,22 +2,36 @@
 
 ESLint config for @mizdra
 
-## Usage
+## Install
 
-```console
-$ yarn add -D @mizdra/eslint-config-mizdra
+Install along with all compatible peerDeps:
+
+```bash
+npx install-peerdeps @mizdra/eslint-config-mizdra --dev --yarn
 ```
+
+If you don't need all the peerDeps, you can install them manually:
+
+```bash
+# basic
+yarn add -D @mizdra/eslint-config-mizdra eslint eslint-plugin-import
+
+# for +typescript
+yarn add -D @typescript-eslint/eslint-plugin @typescript-eslint/parser typescript
+
+# for +react
+yarn add -D eslint-plugin-react eslint-plugin-react-hooks
+
+# for +prettier
+yarn add -D eslint-config-prettier eslint-plugin-prettier prettier
+```
+
+## Usage
 
 ```javascript
 module.exports = {
   root: true,
-  extends: [
-    // basic
-    '@mizdra/mizdra',
-    '@mizdra/mizdra/+typescript',
-    '@mizdra/mizdra/+react',
-    '@mizdra/mizdra/+prettier',
-  ],
+  extends: ['@mizdra/mizdra', '@mizdra/mizdra/+typescript', '@mizdra/mizdra/+react', '@mizdra/mizdra/+prettier'],
   env: {
     node: true, // for jest
     jest: true, // for jest
@@ -32,8 +46,7 @@ module.exports = {
 
 ```console
 $ git switch develop
-$ yarn version
-$ git push --tags
+$ yarn version --no-git-tag-version
 $ gh pr create --web --base master --title "Release vX.X.X"
 ## When you merge PR, the package will be published automatically
 ```
