@@ -46,7 +46,8 @@ module.exports = {
 
 ```console
 $ git switch develop
-$ yarn version
+$ yarn version --no-git-tag-version
+$ git commit -am "vX.X.X"
 $ gh pr create --web --base master --title "Release vX.X.X"
 ## When you merge PR, the package will be published automatically
 ```
