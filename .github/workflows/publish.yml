@@ -24,7 +24,7 @@ jobs:
       - name: install
         run: yarn install
       - name: check
-        run: yarn run check
+        run: yarn run run-s -l check:*
 
       # まだ publish されていないバージョンなら publish する
       - name: publish
