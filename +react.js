@@ -1,5 +1,3 @@
-'use strict';
-
 module.exports = {
   plugins: ['react', 'react-hooks'],
   extends: [
