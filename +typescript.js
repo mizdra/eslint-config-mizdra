@@ -1,5 +1,3 @@
-'use strict';
-
 module.exports = {
   plugins: ['@typescript-eslint'],
   extends: [
@@ -12,6 +10,9 @@ module.exports = {
     project: './tsconfig.json',
   },
   rules: {
+    // eslint
+    strict: 0,
+
     // import
     // eslint ではモジュールの解決に失敗することがあるので, TypeScriptに任せる
     // ref: https://github.com/benmosher/eslint-plugin-import/issues/1341
