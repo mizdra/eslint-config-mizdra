@@ -22,8 +22,4 @@ jobs:
         if: steps.cache.outputs.cache-hit != 'true'
         run: yarn install --frozen-lockfile
 
-      - name: yarn run check:eslint
-        run: yarn run check:eslint
-
-      - name: yarn run check:prettier
-        run: yarn run check:prettier
+      - name: yarn run run-s -l check:*
