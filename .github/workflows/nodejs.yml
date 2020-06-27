@@ -22,4 +22,5 @@ jobs:
         if: steps.cache.outputs.cache-hit != 'true'
         run: yarn install --frozen-lockfile
 
-      - name: yarn run run-s -l check:*
+      - name: yarn run run-s 'check:*'
+        run: yarn run run-s 'check:*'
