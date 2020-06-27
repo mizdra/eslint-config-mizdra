@@ -12,9 +12,8 @@
     "registry": "https://registry.npmjs.org/"
   },
   "scripts": {
-    "check": "run-p -l -c 'check:eslint --color' check:prettier",
-    "check:eslint": "eslint '**/*.js'",
-    "check:prettier": "prettier --check ."
+    "check": "run-p -l -c 'check:eslint --color'",
+    "check:eslint": "eslint '**/*.js'"
   },
   "engines": {
     "node": ">=10.0.0",
