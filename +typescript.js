@@ -1,3 +1,5 @@
+// @ts-check
+
 /** @type import('eslint').Linter.ConfigOverride */
 const configOverride = {
   // *.js などではこれらのルールが適用されないようにする
