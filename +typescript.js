@@ -4,6 +4,7 @@ const configOverride = {
   files: ['*.ts', '*.tsx'],
   plugins: ['@typescript-eslint'],
   extends: [
+    'plugin:@typescript-eslint/recommended-requiring-type-checking',
     // import
     'plugin:import/typescript',
   ],
