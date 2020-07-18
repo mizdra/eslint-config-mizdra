@@ -1,4 +1,7 @@
-module.exports = {
+/** @type import('eslint').Linter.ConfigOverride */
+const configOverride = {
+  // *.js などではこれらのルールが適用されないようにする
+  files: ['*.ts', '*.tsx'],
   plugins: ['@typescript-eslint'],
   extends: [
     // import
@@ -53,4 +56,9 @@ module.exports = {
     'no-array-constructor': 0,
     '@typescript-eslint/no-array-constructor': 2,
   },
+};
+
+/** @type import('eslint').Linter.BaseConfig */
+module.exports = {
+  overrides: [configOverride],
 };
