@@ -21,6 +21,11 @@ module.exports = {
     'no-console': 0,
     'no-var': 2,
     'func-style': [2, 'declaration', { allowArrowFunctions: true }],
+    // eslint や @typescript-eslint の no-unused-vars は正確ではない & 未使用変数の解析は非常にコストの掛かる作業のため、off にする。
+    // *.ts なら tsc の noUnused* オプションで代用する。*.js の場合は *.ts のように tsc を使って CI で未使用変数の使用を弾くことはできないが、
+    // tsserver がヒントを出してくれるので、それで妥協してもらう。
+    // ref: https://github.com/typescript-eslint/typescript-eslint/issues/1856
+    'no-unused-vars': 0,
     'prefer-const': 2,
     semi: [2, 'always'],
     strict: [2, 'global'],

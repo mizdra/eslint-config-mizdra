@@ -42,7 +42,6 @@ const configOverride = {
     '@typescript-eslint/no-require-imports': 2,
     // @typescript-eslint の no-unused-vars-experimental は正確ではないので, tsc の noUnused* オプションで代用する
     // ref: https://github.com/typescript-eslint/typescript-eslint/issues/1856
-    'no-unused-vars': 0,
     '@typescript-eslint/no-unused-vars-experimental': 0,
     // opinionated, require type information
     '@typescript-eslint/prefer-regexp-exec': 2,
