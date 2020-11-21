@@ -27,8 +27,8 @@ module.exports = {
     // ref: https://github.com/typescript-eslint/typescript-eslint/issues/1856
     'no-unused-vars': 0,
     'prefer-const': 2,
-    semi: [2, 'always'],
-    strict: [2, 'global'],
+    'semi': [2, 'always'],
+    'strict': [2, 'global'],
 
     // import
     // default export は tsserver と相性が悪いので禁止する
