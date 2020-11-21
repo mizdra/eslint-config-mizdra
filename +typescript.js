@@ -17,7 +17,7 @@ const configOverride = {
   },
   rules: {
     // eslint
-    strict: 0,
+    'strict': 0,
 
     // import
     // eslint ではモジュールの解決に失敗することがあるので, TypeScriptに任せる

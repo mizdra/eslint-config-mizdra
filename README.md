@@ -28,10 +28,17 @@ yarn add -D eslint-config-prettier eslint-plugin-prettier prettier
 
 ## Usage
 
+<!-- prettier-ignore-start -->
+
 ```javascript
 module.exports = {
   root: true,
-  extends: ['@mizdra/mizdra', '@mizdra/mizdra/+typescript', '@mizdra/mizdra/+react', '@mizdra/mizdra/+prettier'],
+  extends: [
+    '@mizdra/mizdra',
+    '@mizdra/mizdra/+typescript',
+    '@mizdra/mizdra/+react',
+    '@mizdra/mizdra/+prettier',
+  ],
   env: {
     node: true, // for jest
     jest: true, // for jest
@@ -39,6 +46,39 @@ module.exports = {
   rules: {
     // your favorite rules
   },
+};
+```
+
+<!-- prettier-ignore-end -->
+
+## Extra: Shared prettier configuration
+
+`eslint-config-mizdra` also provides a [shared prettier configuration](https://prettier.io/docs/en/configuration.html#sharing-configurations). The shared prettier configuration is exported in `@mizdra/mizdra/.prettierrc.js`. It is available as follows.
+
+If you have written the prettier configuration in `package.json`:
+
+```json
+{
+  "name": "your-app",
+  "version": "0.0.1",
+  "prettier": "@mizdra/mizdra/.prettierrc.js"
+}
+```
+
+If you have written the prettier configuration in `.prettierrc.json`:
+
+```json
+"@mizdra/mizdra/.prettierrc.js"
+```
+
+If you have written the prettier configuration in `.prettierrc.js`:
+
+```js
+module.exports = {
+  ...require('@mizdra/mizdra/.prettierrc.js'),
+  // You can override the options of a shared prettier
+  // configuration in `.prettierrc.js`
+  semi: false,
 };
 ```
 
