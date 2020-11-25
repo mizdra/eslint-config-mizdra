@@ -6,6 +6,8 @@ const configOverrideForTS = {
   files: ['*.ts', '*.tsx'],
   plugins: ['@typescript-eslint'],
   extends: [
+    // 本当は以下の config も有効化したいが、opinionated なルールが多いため、有効化せず自前で明示的にルールを ON にしていくことに
+    // 'plugin:@typescript-eslint/recommended',
     'plugin:@typescript-eslint/recommended-requiring-type-checking',
     // import
     'plugin:import/typescript',
