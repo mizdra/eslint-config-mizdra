@@ -1,7 +1,7 @@
 // @ts-check
 
 /** @type import('eslint').Linter.ConfigOverride */
-const configOverride = {
+const configOverrideForTS = {
   // *.js などではこれらのルールが適用されないようにする
   files: ['*.ts', '*.tsx'],
   plugins: ['@typescript-eslint'],
@@ -62,5 +62,5 @@ const configOverride = {
 
 /** @type import('eslint').Linter.BaseConfig */
 module.exports = {
-  overrides: [configOverride],
+  overrides: [configOverrideForTS],
 };
