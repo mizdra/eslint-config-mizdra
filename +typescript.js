@@ -55,9 +55,6 @@ const configOverrideForTS = {
     // eval 及び eval 相当の API はセキュリティとパフォーマンスのリスクがあるので使用を禁止する
     // require type information
     '@typescript-eslint/no-implied-eval': 2,
-    // @typescript-eslint の no-unused-vars-experimental は正確ではないので, tsc の noUnused* オプションで代用する
-    // ref: https://github.com/typescript-eslint/typescript-eslint/issues/1856
-    '@typescript-eslint/no-unused-vars-experimental': 0,
   },
 };
 
