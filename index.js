@@ -4,7 +4,12 @@
 module.exports = {
   plugins: ['import'],
   env: {
-    es6: true,
+    // アプリケーションによってサポートされている ECMAScript のバージョンは違うので、
+    // 本来であればアプリケーションで利用している Node.js のバージョンやサポートブラウザの
+    // バージョンに合わせて上書きするべきするべき設定だが、いちいち上書きするのも面倒なので、
+    // ひとまず一番最新のバージョンが利用可能であるとしておき、必要に応じてアプリケーションサイドで
+    // 上書きしてもらう、という運用にする
+    es2020: true,
   },
   extends: [
     // eslint
@@ -14,7 +19,9 @@ module.exports = {
     'plugin:import/recommended',
   ],
   parserOptions: {
-    ecmaVersion: 2020,
+    // 現代では type="script" な環境で JS を書くことはまずないので、
+    // デフォルトで type="module" なJSであるとして lint する
+    sourceType: 'module',
   },
   rules: {
     // eslint

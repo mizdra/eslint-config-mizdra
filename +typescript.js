@@ -13,7 +13,10 @@ const configOverrideForTS = {
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
-    sourceType: 'module',
+    // tsconfig.json の場所はプロジェクトによって異なるため、本来はプロジェクトに合わせて
+    // 上書きするべきするべき設定だが、いちいち上書きするのも面倒なので、ひとまず
+    // プロジェクトルートにある tsconfig.json を `parserOptions.project` にセットしてある。
+    // プロジェクトに応じて適時上書きしてもらうことを想定している。
     project: './tsconfig.json',
   },
   rules: {
