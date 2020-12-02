@@ -36,11 +36,13 @@ const configOverrideForTS = {
     '@typescript-eslint/consistent-type-assertions': 2,
     // 強力すぎるため off に
     '@typescript-eslint/explicit-module-boundary-types': 0,
-    // 強力すぎるため off に
-    '@typescript-eslint/no-explicit-any': 0,
-    // 強力すぎるため off に
+    // 強力すぎるため warn に
+    '@typescript-eslint/no-explicit-any': 1,
+    // 強力すぎるため warn に
     // require type information
-    '@typescript-eslint/no-floating-promises': 0,
+    '@typescript-eslint/no-floating-promises': 1,
+    // 強力すぎるため warn に
+    '@typescript-eslint/no-non-null-assertion': 1,
     // `require` は静的解析と相性が悪いため禁止する。
     // 代わりに ES Modules の使用を推奨する。
     '@typescript-eslint/no-require-imports': 2,
