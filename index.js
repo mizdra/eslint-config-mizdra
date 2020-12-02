@@ -29,8 +29,18 @@ module.exports = {
     // コーディングスタイル統一のため、`const fn = function() { ... }` 形式の関数定義を禁止する。
     // 代わりに `function fn() { ... }` か `const fn = () => { ... }` 形式の関数定義を推奨する。
     'func-style': [2, 'declaration', { allowArrowFunctions: true }],
-    // `_` 始まりの変数は未使用であっても警告しないように
-    'no-unused-vars': [2, { argsIgnorePattern: '^_' }],
+    // - `const { unusedProp, ...usedRestProps } = obj;` のようなコードはJSではよく書かれるので、
+    //   `unusedProp` が未使用であると警告しないように
+    // - `_` 始まりの変数は未使用変数を表す、という文化に沿って `_` 始まりの変数は未使用であっても警告しないように
+    // - エラーを無視しないよう、catch 節のエラーオブジェクトが未使用の場合は警告する
+    'no-unused-vars': [
+      2,
+      {
+        ignoreRestSiblings: true,
+        argsIgnorePattern: '^_',
+        caughtErrors: 'all',
+      },
+    ],
     // 可読性のため、`let` でなくて良い場面では `const` を使うよう強制する
     'prefer-const': 2,
     // ASI による複雑怪奇な挙動に付き合わなくて済むよう、セミコロンを必須とする
