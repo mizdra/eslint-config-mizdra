@@ -28,10 +28,17 @@ yarn add -D eslint-config-prettier eslint-plugin-prettier prettier
 
 ## Usage
 
+<!-- prettier-ignore-start -->
+
 ```javascript
 module.exports = {
   root: true,
-  extends: ['@mizdra/mizdra', '@mizdra/mizdra/+typescript', '@mizdra/mizdra/+react', '@mizdra/mizdra/+prettier'],
+  extends: [
+    '@mizdra/mizdra',
+    '@mizdra/mizdra/+typescript',
+    '@mizdra/mizdra/+react',
+    '@mizdra/mizdra/+prettier',
+  ],
   env: {
     node: true, // for jest
     jest: true, // for jest
@@ -41,6 +48,8 @@ module.exports = {
   },
 };
 ```
+
+<!-- prettier-ignore-end -->
 
 ## Release
 

@@ -1,8 +1,14 @@
 {
   "name": "@mizdra/eslint-config-mizdra",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "description": "ESLint config for @mizdra",
   "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./+typescript": "./+typescript.js",
+    "./+react": "./+react.js",
+    "./+prettier": "./+prettier.js"
+  },
   "repository": "https://github.com/mizdra/eslint-config-mizdra",
   "author": "mizdra <pp.mizdra@gmail.com>",
   "license": "MIT",
@@ -65,13 +71,14 @@
     }
   },
   "devDependencies": {
-    "eslint": "^7.4.0",
-    "eslint-config-prettier": "^6.11.0",
-    "eslint-plugin-import": "^2.22.0",
+    "@mizdra/prettier-config-mizdra": "^0.3.0",
+    "eslint": "^7.14.0",
+    "eslint-config-prettier": "^6.15.0",
+    "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-prettier": "^3.1.4",
     "npm-run-all": "^4.1.5",
-    "prettier": "~2.0.5",
-    "typescript": "^3.9.6"
+    "prettier": "~2.2.1",
+    "typescript": "^4.1.2"
   },
   "files": [
     "*.js"
