@@ -40,43 +40,52 @@ const configOverrideForTS = {
     '@typescript-eslint/naming-convention': [
       1,
       {
-        selector: 'default',
+        selector: ['variable', 'default'],
+        // `const CounterComponent = () => { ... }` や `const CONSTANT = 1;` のような変数が記述できるよう、
+        // PascalCase や UPPER_CASE も許可する
+        format: ['camelCase', 'PascalCase', 'UPPER_CASE'],
         // 末尾のアンダースコアは基本的に使われないのでデフォルトで禁止しておく。
         // 必要に応じて allow に上書きすることを想定している。
         leadingUnderscore: 'allow',
         trailingUnderscore: 'forbid',
       },
       {
-        selector: 'variable',
-        // `const CounterComponent = () => { ... }` や `const CONSTANT = 1;` のような変数が記述できるよう、
-        // PascalCase や UPPER_CASE も許可する
-        format: ['camelCase', 'PascalCase', 'UPPER_CASE'],
-      },
-      {
         selector: 'function',
         // React Component の宣言のために PascalCase も許可する
         format: ['camelCase', 'PascalCase'],
+        leadingUnderscore: 'allow',
+        trailingUnderscore: 'forbid',
       },
       {
         selector: 'parameter',
         format: ['camelCase'],
+        leadingUnderscore: 'allow',
+        trailingUnderscore: 'forbid',
       },
       {
         selector: 'memberLike',
         format: ['camelCase'],
+        leadingUnderscore: 'allow',
+        trailingUnderscore: 'forbid',
       },
       {
         selector: 'typeLike',
         format: ['PascalCase'],
+        leadingUnderscore: 'allow',
+        trailingUnderscore: 'forbid',
       },
       {
         selector: 'property',
         // オブジェクトのプロパティには様々な命名規則の識別子が書かれるので、緩めにしておく
         format: ['camelCase', 'PascalCase', 'UPPER_CASE'],
+        leadingUnderscore: 'allow',
+        trailingUnderscore: 'forbid',
       },
       {
         selector: 'method',
         format: ['camelCase'],
+        leadingUnderscore: 'allow',
+        trailingUnderscore: 'forbid',
       },
     ],
     // 強力すぎるため warn に
