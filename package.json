@@ -1,6 +1,6 @@
 {
   "name": "@mizdra/eslint-config-mizdra",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "description": "ESLint config for @mizdra",
   "main": "index.js",
   "exports": {
