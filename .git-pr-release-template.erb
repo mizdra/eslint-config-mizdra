@@ -1,0 +1,15 @@
+Release <%= Time.now %>
+
+## Check PR
+
+<% pull_requests.each do |pr| -%>
+<%=  pr.to_checklist_item %>
+<% end -%>
+
+## Release
+
+- [ ] `git switch develop && git pull`
+- [ ] `yarn version --no-git-tag-version`
+- [ ] `git commit -am "vX.X.X"`
+- [ ] `git push`
+- [ ] Merge this PR into `master`
