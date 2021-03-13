@@ -23,7 +23,7 @@ yarn add -D @typescript-eslint/eslint-plugin @typescript-eslint/parser typescrip
 yarn add -D eslint-plugin-react eslint-plugin-react-hooks
 
 # for +prettier
-yarn add -D eslint-config-prettier eslint-plugin-prettier prettier
+yarn add -D eslint-config-prettier prettier
 ```
 
 ## Usage
