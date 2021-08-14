@@ -112,18 +112,14 @@ const configOverrideForTS = {
     // eval 及び eval 相当の API はセキュリティとパフォーマンスのリスクがあるので使用を禁止する
     // require type information
     '@typescript-eslint/no-implied-eval': 2,
-    // - `const { unusedProp, ...usedRestProps } = obj;` のようなコードはJSではよく書かれるので、
-    //   `unusedProp` が未使用であると警告しないように
-    // - `_` 始まりの変数は未使用変数を表す、という文化に沿って `_` 始まりの変数は未使用であっても警告しないように
-    // - エラーを無視しないよう、catch 節のエラーオブジェクトが未使用の場合は警告する
-    '@typescript-eslint/no-unused-vars': [
-      2,
-      {
-        ignoreRestSiblings: true,
-        argsIgnorePattern: '^_',
-        caughtErrors: 'all',
-      },
-    ],
+    // tsc の `noUnusedLocals` や `noUnusedParameters` のほうが賢く、煩すぎないので tsc に任せる
+    'no-unused-vars': 0,
+    '@typescript-eslint/no-unused-vars': 0,
+    // error だと未定義関数を呼び出した際に、実引数の部分まで赤く線が引かれて煩すぎる。
+    // callee だけ赤く染まれば十分なので、このルールは off にしておく。
+    '@typescript-eslint/no-unsafe-assignment': 0,
+    // @typescript-eslint/no-explicit-any さえあれば十分なので off にしておく。
+    '@typescript-eslint/no-unsafe-member-access': 0,
   },
 };
 
