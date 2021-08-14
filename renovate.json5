@@ -1,3 +1,5 @@
 {
-  extends: ['github>mizdra/renovate-config-mizdra'],
+  extends: [
+    'github>mizdra/renovate-config-mizdra'
+  ],
 }
