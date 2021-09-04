@@ -3,7 +3,7 @@ name: Node CI
 on: [push]
 
 jobs:
-  check:
+  lint:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -22,5 +22,5 @@ jobs:
         if: steps.cache.outputs.cache-hit != 'true'
         run: yarn install --frozen-lockfile
 
-      - name: yarn run run-s 'check:*'
-        run: yarn run run-s 'check:*'
+      - name: yarn run lint
+        run: yarn run lint
