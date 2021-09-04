@@ -23,8 +23,8 @@ jobs:
 
       - name: install
         run: yarn install
-      - name: check
-        run: yarn run run-s check:*
+      - name: lint
+        run: yarn run lint
 
       # まだ publish されていないバージョンなら publish する
       - name: publish
