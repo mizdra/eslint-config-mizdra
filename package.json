@@ -19,7 +19,7 @@
   },
   "scripts": {
     "lint": "run-s -c lint:*",
-    "lint:eslint": "eslint '**/*.js'",
+    "lint:eslint": "eslint .",
     "lint:eslint:fix": "yarn run lint:eslint --fix",
     "lint:prettier": "prettier --check .",
     "lint:prettier:fix": "prettier --write ."
