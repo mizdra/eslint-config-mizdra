@@ -2,7 +2,7 @@
 
 /** @type import('eslint').Linter.ConfigOverride */
 const configOverrideForTS = {
-  files: ['*.ts', '*.tsx'],
+  files: ['*.ts', '*.tsx', '*.cts', '*.mts'],
   rules: {
     // TypeScript では propTypes は使わず TypeScript の型注釈を使えば良いので off にする
     'react/prop-types': 0,
