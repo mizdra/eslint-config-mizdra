@@ -3,7 +3,7 @@
 /** @type import('eslint').Linter.ConfigOverride */
 const configOverrideForTS = {
   // *.js などではこれらのルールが適用されないようにする
-  files: ['*.ts', '*.tsx'],
+  files: ['*.ts', '*.tsx', '*.cts', '*.mts'],
   plugins: ['@typescript-eslint'],
   extends: [
     'plugin:@typescript-eslint/recommended',
