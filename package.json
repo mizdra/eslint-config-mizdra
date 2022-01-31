@@ -71,7 +71,7 @@
     }
   },
   "devDependencies": {
-    "@mizdra/prettier-config-mizdra": "^0.4.0",
+    "@mizdra/prettier-config-mizdra": "^1.0.0",
     "@types/eslint": "^8.4.1",
     "eslint": "^8.8.0",
     "eslint-config-prettier": "^8.3.0",
