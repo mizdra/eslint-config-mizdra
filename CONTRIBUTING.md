@@ -4,7 +4,7 @@ This is a guide for contributors.
 
 ## How to dev
 
-- `yarn run lint`: Try static-checking
+- `pnpm lint`: Try static-checking
 
 ## How to release
 
@@ -13,10 +13,10 @@ This is a guide for contributors.
   git switch main && git pull
   ```
 - ```bash
-  yarn version
+  pnpm version
   ```
 - ```bash
-  npm publish
+  pnpm publish
   ```
 - ```bash
   git push --follow-tags
