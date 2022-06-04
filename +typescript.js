@@ -97,8 +97,6 @@ const configOverrideForTS = {
         format: null,
       },
     ],
-    // 強力すぎるため warn に
-    '@typescript-eslint/no-explicit-any': 1,
     // 強力すぎるため off に
     '@typescript-eslint/no-non-null-assertion': 0,
     // `require` は静的解析と相性が悪いため禁止する。
