@@ -7,6 +7,11 @@ ESLint config for @mizdra
 Install along with all compatible peerDeps:
 
 ```bash
+# for npm
+npx install-peerdeps @mizdra/eslint-config-mizdra --dev
+# for pnpm
+npx install-peerdeps @mizdra/eslint-config-mizdra --dev --pnpm
+# for yarn
 npx install-peerdeps @mizdra/eslint-config-mizdra --dev --yarn
 ```
 
@@ -14,16 +19,16 @@ If you don't need all the peerDeps, you can install them manually:
 
 ```bash
 # basic
-yarn add -D @mizdra/eslint-config-mizdra eslint eslint-plugin-import
+pnpm add -D @mizdra/eslint-config-mizdra eslint eslint-plugin-import
 
 # for +typescript
-yarn add -D @typescript-eslint/eslint-plugin @typescript-eslint/parser typescript
+pnpm add -D @typescript-eslint/eslint-plugin @typescript-eslint/parser typescript
 
 # for +react
-yarn add -D eslint-plugin-react eslint-plugin-react-hooks
+pnpm add -D eslint-plugin-react eslint-plugin-react-hooks
 
 # for +prettier
-yarn add -D eslint-config-prettier prettier
+pnpm add -D eslint-config-prettier prettier
 ```
 
 ## Usage

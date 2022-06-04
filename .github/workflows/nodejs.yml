@@ -6,21 +6,15 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2.2.2
+      - uses: actions/setup-node@v3
         with:
-          node-version: '14.x'
+          node-version: '18.x'
+          cache: 'pnpm'
 
-      - uses: actions/cache@v2
-        id: cache
-        with:
-          path: node_modules
-          key: node-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: node-
+      - name: pnpm install
+        run: pnpm install
 
-      - name: yarn install --frozen-lockfile
-        if: steps.cache.outputs.cache-hit != 'true'
-        run: yarn install --frozen-lockfile
-
-      - name: yarn run lint
-        run: yarn run lint
+      - name: pnpm run lint
+        run: pnpm run lint
