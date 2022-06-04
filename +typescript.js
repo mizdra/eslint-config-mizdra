@@ -31,6 +31,8 @@ const configOverrideForTS = {
     // @typescript-eslint (Basic Rules)
     // コーディングスタイル統一のため、`Array<T>` 形式を禁止して `T[]` の使用を推奨する
     '@typescript-eslint/array-type': 2,
+    // ts-ignore は覚悟のある時にしか使わないので、いちいち lint error にする必要もない
+    '@typescript-eslint/ban-ts-comment': 0,
     // opinionated
     // コーディングスタイル統一のため、`<T> expr` 形式の型アサーションを禁止して `expr as T` の使用を推奨する
     '@typescript-eslint/consistent-type-assertions': 2,
@@ -87,14 +89,21 @@ const configOverrideForTS = {
         leadingUnderscore: 'allow',
         trailingUnderscore: 'forbid',
       },
+      {
+        // プロパティがクオートで囲われている場合は、どんなパターンも許可する
+        // https://typescript-eslint.io/rules/naming-convention/#ignore-properties-that-require-quotes
+        selector: 'property',
+        modifiers: ['requiresQuotes'],
+        format: null,
+      },
     ],
     // 強力すぎるため warn に
     '@typescript-eslint/no-explicit-any': 1,
     // 強力すぎるため warn に
     // require type information
     '@typescript-eslint/no-floating-promises': 1,
-    // 強力すぎるため warn に
-    '@typescript-eslint/no-non-null-assertion': 1,
+    // 強力すぎるため off に
+    '@typescript-eslint/no-non-null-assertion': 0,
     // `require` は静的解析と相性が悪いため禁止する。
     // 代わりに ES Modules の使用を推奨する。
     '@typescript-eslint/no-require-imports': 2,
@@ -115,6 +124,8 @@ const configOverrideForTS = {
     // tsc の `noUnusedLocals` や `noUnusedParameters` のほうが賢く、煩すぎないので tsc に任せる
     'no-unused-vars': 0,
     '@typescript-eslint/no-unused-vars': 0,
+    // 煩すぎるので off
+    '@typescript-eslint/no-unsafe-argument': 0,
     // error だと未定義関数を呼び出した際に、実引数の部分まで赤く線が引かれて煩すぎる。
     // callee だけ赤く染まれば十分なので、このルールは off にしておく。
     '@typescript-eslint/no-unsafe-assignment': 0,
@@ -122,6 +133,8 @@ const configOverrideForTS = {
     '@typescript-eslint/no-unsafe-call': 0,
     // @typescript-eslint/no-explicit-any さえあれば十分なので off にしておく。
     '@typescript-eslint/no-unsafe-member-access': 0,
+    // 煩すぎるので off
+    '@typescript-eslint/no-unsafe-return': 0,
   },
 };
 
