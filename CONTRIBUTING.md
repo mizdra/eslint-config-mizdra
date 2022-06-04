@@ -4,7 +4,7 @@ This is a guide for contributors.
 
 ## How to dev
 
-- `pnpm lint`: Try static-checking
+- `pnpm run lint`: Try static-checking
 
 ## How to release
 

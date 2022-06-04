@@ -16,5 +16,5 @@ jobs:
       - name: pnpm install
         run: pnpm install
 
-      - name: pnpm lint
-        run: pnpm lint
+      - name: pnpm run lint
+        run: pnpm run lint
