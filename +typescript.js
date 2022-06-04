@@ -99,9 +99,6 @@ const configOverrideForTS = {
     ],
     // 強力すぎるため warn に
     '@typescript-eslint/no-explicit-any': 1,
-    // 強力すぎるため warn に
-    // require type information
-    '@typescript-eslint/no-floating-promises': 1,
     // 強力すぎるため off に
     '@typescript-eslint/no-non-null-assertion': 0,
     // `require` は静的解析と相性が悪いため禁止する。
