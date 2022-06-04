@@ -97,7 +97,7 @@ const configOverrideForTS = {
         format: null,
       },
     ],
-    // 強力すぎるため off に
+    // no-non-null-assertion は覚悟のある時にしか使わないので、いちいち lint error にする必要もない
     '@typescript-eslint/no-non-null-assertion': 0,
     // `require` は静的解析と相性が悪いため禁止する。
     // 代わりに ES Modules の使用を推奨する。
