@@ -3,12 +3,7 @@
 /** @type import('eslint').Linter.BaseConfig */
 module.exports = {
   root: true,
-  extends: [
-    // basic
-    './index.js',
-    './+prettier.js',
-  ],
-  env: {
-    node: true,
-  },
+  extends: ['./index.js', './+prettier.js'],
+  parserOptions: { ecmaVersion: 2021 },
+  env: { es2021: true, node: true },
 };
