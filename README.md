@@ -39,8 +39,8 @@ pnpm add -D eslint-config-prettier prettier
 module.exports = {
   root: true,
   extends: ['@mizdra/mizdra', '@mizdra/mizdra/+react', '@mizdra/mizdra/+prettier'],
-  parserOptions: { ecmaVersion: 2019 },
-  env: { es2019: true, node: true, browser: true, jest: true },
+  parserOptions: { ecmaVersion: 2021 },
+  env: { es2021: true, node: true, browser: true, jest: true },
   rules: {
     // Write your favorite rules
   },
@@ -80,7 +80,7 @@ export default [
   ...compat.extends('@mizdra/mizdra', '@mizdra/mizdra/+react'),
   {
     languageOptions: {
-      ecmaVersion: 2019,
+      ecmaVersion: 2021,
       globals: { ...globals.node, ...globals.browser, ...globals.jest },
     },
     rules: {
