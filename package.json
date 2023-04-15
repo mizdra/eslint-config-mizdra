@@ -20,16 +20,15 @@
   "scripts": {
     "lint": "run-s -c lint:*",
     "lint:eslint": "eslint .",
-    "lint:eslint:fix": "pnpm run lint:eslint --fix",
+    "lint:eslint:fix": "npm run lint:eslint --fix",
     "lint:prettier": "prettier --check .",
     "lint:prettier:fix": "prettier --write .",
-    "test": "cd test && pnpm run lint"
+    "test": "cd test && npm run lint"
   },
   "prettier": "@mizdra/prettier-config-mizdra",
   "engines": {
     "node": ">=10.0.0"
   },
-  "packageManager": "pnpm@7.1.7",
   "peerDependencies": {
     "@typescript-eslint/eslint-plugin": ">=2.31.0",
     "@typescript-eslint/parser": ">=2.31.0",

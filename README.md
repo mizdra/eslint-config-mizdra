@@ -19,16 +19,16 @@ If you don't need all the peerDeps, you can install them manually:
 
 ```bash
 # basic
-pnpm add -D @mizdra/eslint-config-mizdra eslint eslint-plugin-import
+npm i -D @mizdra/eslint-config-mizdra eslint eslint-plugin-import
 
 # for +typescript
-pnpm add -D @typescript-eslint/eslint-plugin @typescript-eslint/parser typescript
+npm i -D @typescript-eslint/eslint-plugin @typescript-eslint/parser typescript
 
 # for +react
-pnpm add -D eslint-plugin-react eslint-plugin-react-hooks
+npm i -D eslint-plugin-react eslint-plugin-react-hooks
 
 # for +prettier
-pnpm add -D eslint-config-prettier prettier
+npm i -D eslint-config-prettier prettier
 ```
 
 ## Usage

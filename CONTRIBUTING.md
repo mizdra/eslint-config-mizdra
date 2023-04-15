@@ -4,7 +4,7 @@ This is a guide for contributors.
 
 ## How to dev
 
-- `pnpm run lint`: Try static-checking
+- `npm run lint`: Try static-checking
 
 ## How to release
 
@@ -13,10 +13,10 @@ This is a guide for contributors.
   git switch main && git pull
   ```
 - ```bash
-  pnpm version
+  npm version <major|minor|patch>
   ```
 - ```bash
-  pnpm publish
+  npm publish
   ```
 - ```bash
   git push --follow-tags
