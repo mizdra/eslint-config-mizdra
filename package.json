@@ -2,12 +2,12 @@
   "name": "@mizdra/eslint-config-mizdra",
   "version": "1.2.0",
   "description": "ESLint config for @mizdra",
-  "main": "index.js",
+  "main": "src/index.js",
   "exports": {
-    ".": "./index.js",
-    "./+typescript": "./+typescript.js",
-    "./+react": "./+react.js",
-    "./+prettier": "./+prettier.js"
+    ".": "./src/index.js",
+    "./+typescript": "./src/+typescript.js",
+    "./+react": "./src/+react.js",
+    "./+prettier": "./src/+prettier.js"
   },
   "repository": "https://github.com/mizdra/eslint-config-mizdra",
   "author": "mizdra <pp.mizdra@gmail.com>",
