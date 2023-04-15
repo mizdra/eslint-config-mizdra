@@ -33,25 +33,68 @@ pnpm add -D eslint-config-prettier prettier
 
 ## Usage
 
-<!-- prettier-ignore-start -->
+### Legacy config
 
 ```javascript
 module.exports = {
   root: true,
-  extends: [
-    '@mizdra/mizdra',
-    '@mizdra/mizdra/+typescript',
-    '@mizdra/mizdra/+react',
-    '@mizdra/mizdra/+prettier',
-  ],
-  env: {
-    node: true, // for jest
-    jest: true, // for jest
-  },
+  extends: ['@mizdra/mizdra', '@mizdra/mizdra/+react', '@mizdra/mizdra/+prettier'],
+  parserOptions: { ecmaVersion: 2021 },
+  env: { es2021: true, node: true, browser: true, jest: true },
   rules: {
-    // your favorite rules
+    // Write your favorite rules
   },
+  overrides: [
+    // For TypeScript
+    {
+      files: ['*.ts', '*.tsx', '*.cts', '*.mts'],
+      extends: ['@mizdra/mizdra/+typescript', '@mizdra/mizdra/+prettier'],
+      rules: {
+        // Write your favorite rules for TypeScript
+      },
+    },
+  ],
 };
 ```
 
-<!-- prettier-ignore-end -->
+### Flat config
+
+```javascript
+// @ts-check
+
+import { FlatCompat } from '@eslint/eslintrc';
+import js from '@eslint/js';
+import globals from 'globals';
+
+const __dirname = new URL('.', import.meta.url).pathname;
+
+const compat = new FlatCompat({
+  baseDirectory: __dirname,
+  recommendedConfig: js.configs.recommended,
+  allConfig: js.configs.all,
+});
+
+/** @type {import('eslint').Linter.FlatConfig[]} */
+export default [
+  { ignores: ['**/dist'] },
+  ...compat.extends('@mizdra/mizdra', '@mizdra/mizdra/+react'),
+  {
+    languageOptions: {
+      ecmaVersion: 2021,
+      globals: { ...globals.node, ...globals.browser, ...globals.jest },
+    },
+    rules: {
+      // Write your favorite rules
+    },
+  },
+  ...compat.config({
+    // For TypeScript
+    files: ['*.ts', '*.tsx', '*.cts', '*.mts'],
+    extends: ['@mizdra/mizdra/+typescript'],
+    rules: {
+      // Write your favorite rules for TypeScript
+    },
+  }),
+  ...compat.extends('@mizdra/mizdra/+prettier'),
+];
+```

@@ -2,29 +2,11 @@
 
 /** @type import('eslint').Linter.BaseConfig */
 module.exports = {
-  plugins: ['import'],
-  extends: [
-    // eslint
-    'eslint:recommended',
-
-    // import
-    'plugin:import/recommended',
-  ],
+  extends: ['eslint:recommended', 'plugin:import/recommended'],
   parserOptions: {
     // 現代では type="script" な環境で JS を書くことはまずないので、
     // デフォルトで type="module" なJSであるとして lint する
     sourceType: 'module',
-    // ES2021 の構文がパースできるように。
-    // NOTE: アプリケーションによってサポートされている ECMAScript のバージョンは違うので、
-    // 本来であればアプリケーションで利用している Node.js のバージョンやサポートブラウザの
-    // バージョンに合わせて上書きするべきするべき設定だが、いちいち上書きするのも面倒なので、
-    // ひとまず一番最新のバージョンが利用可能であるとしておき、必要に応じてアプリケーションサイドで
-    // 上書きしてもらう、という運用にする
-    ecmaVersion: 2021,
-  },
-  env: {
-    // ES2021 で定義されるグローバル変数が利用できるように
-    es2021: true,
   },
   rules: {
     // eslint
