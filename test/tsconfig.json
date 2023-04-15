@@ -5,6 +5,7 @@
     "target": "ESNext",
     "moduleResolution": "bundler",
     "verbatimModuleSyntax": true,
-    "isolatedModules": true
+    "isolatedModules": true,
+    "jsx": "react-jsx"
   }
 }
