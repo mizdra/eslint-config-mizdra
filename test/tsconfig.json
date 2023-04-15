@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "lib": ["ES2021"],
+    "module": "ESNext",
+    "target": "ESNext",
+    "moduleResolution": "bundler",
+    "verbatimModuleSyntax": true,
+    "isolatedModules": true
+  }
+}

@@ -22,7 +22,8 @@
     "lint:eslint": "eslint .",
     "lint:eslint:fix": "pnpm run lint:eslint --fix",
     "lint:prettier": "prettier --check .",
-    "lint:prettier:fix": "prettier --write ."
+    "lint:prettier:fix": "prettier --write .",
+    "test": "cd test && pnpm run lint"
   },
   "prettier": "@mizdra/prettier-config-mizdra",
   "engines": {
@@ -70,11 +71,18 @@
     }
   },
   "devDependencies": {
+    "@eslint/eslintrc": "^2.0.2",
+    "@eslint/js": "^8.38.0",
     "@mizdra/prettier-config-mizdra": "^1.0.0",
     "@types/eslint": "^8.37.0",
+    "@types/node": "^18.15.11",
+    "@typescript-eslint/eslint-plugin": "^5.58.0",
+    "@typescript-eslint/parser": "^5.58.0",
     "eslint": "^8.37.0",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
     "npm-run-all": "^4.1.5",
     "prettier": "~2.8.7",
     "typescript": "^5.0.3"
