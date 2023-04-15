@@ -43,6 +43,7 @@ module.exports = {
   env: {
     es2019: true,
     node: true,
+    browser: true,
     jest: true,
   },
   rules: {

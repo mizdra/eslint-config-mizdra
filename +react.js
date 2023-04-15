@@ -8,9 +8,6 @@ module.exports = {
     'plugin:react/jsx-runtime', // React 17 で追加された新しい JSX Transform を利用するための設定
     'plugin:react-hooks/recommended',
   ],
-  env: {
-    browser: true,
-  },
   settings: {
     react: {
       version: 'detect',
