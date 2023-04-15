@@ -1,9 +1,7 @@
 // @ts-check
 
-/** @type import('eslint').Linter.ConfigOverride */
-const configOverrideForTS = {
-  // *.js などではこれらのルールが適用されないようにする
-  files: ['*.ts', '*.tsx', '*.cts', '*.mts'],
+/** @type import('eslint').Linter.BaseConfig */
+module.exports = {
   extends: [
     'plugin:@typescript-eslint/recommended',
     'plugin:@typescript-eslint/recommended-requiring-type-checking',
@@ -126,9 +124,4 @@ const configOverrideForTS = {
     // 煩すぎるので off
     '@typescript-eslint/no-unsafe-return': 0,
   },
-};
-
-/** @type import('eslint').Linter.BaseConfig */
-module.exports = {
-  overrides: [configOverrideForTS],
 };
