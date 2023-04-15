@@ -1,0 +1,8 @@
+{
+  "type": "commonjs",
+  "scripts": {
+    "lint": "run-s -c lint:*",
+    "lint:legacy-config": "ESLINT_USE_FLAT_CONFIG=false eslint -c .eslintrc.js .",
+    "lint:flat-config": "ESLINT_USE_FLAT_CONFIG=true eslint -c eslint.config.mjs ."
+  }
+}
