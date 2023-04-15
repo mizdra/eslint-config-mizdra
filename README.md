@@ -88,12 +88,16 @@ export default [
     },
   },
   ...compat.config({
-    // For TypeScript
-    files: ['*.ts', '*.tsx', '*.cts', '*.mts'],
-    extends: ['@mizdra/mizdra/+typescript'],
-    rules: {
-      // Write your favorite rules for TypeScript
-    },
+    overrides: [
+      {
+        // For TypeScript
+        files: ['*.ts', '*.tsx', '*.cts', '*.mts'],
+        extends: ['../src/+typescript.js'],
+        rules: {
+          // Write your favorite rules for TypeScript
+        },
+      },
+    ],
   }),
   ...compat.extends('@mizdra/mizdra/+prettier'),
 ];
