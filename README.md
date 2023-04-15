@@ -33,25 +33,20 @@ pnpm add -D eslint-config-prettier prettier
 
 ## Usage
 
-<!-- prettier-ignore-start -->
-
 ```javascript
 module.exports = {
   root: true,
-  extends: [
-    '@mizdra/mizdra',
-    '@mizdra/mizdra/+typescript',
-    '@mizdra/mizdra/+react',
-    '@mizdra/mizdra/+prettier',
-  ],
+  extends: ['@mizdra/mizdra', '@mizdra/mizdra/+typescript', '@mizdra/mizdra/+react', '@mizdra/mizdra/+prettier'],
+  parserOptions: {
+    ecmaVersion: 2019,
+  },
   env: {
-    node: true, // for jest
-    jest: true, // for jest
+    es2019: true,
+    node: true,
+    jest: true,
   },
   rules: {
     // your favorite rules
   },
 };
 ```
-
-<!-- prettier-ignore-end -->
