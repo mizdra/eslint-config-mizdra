@@ -20,9 +20,7 @@
   "scripts": {
     "lint": "run-s -c lint:*",
     "lint:eslint": "eslint .",
-    "lint:eslint:fix": "npm run lint:eslint --fix",
     "lint:prettier": "prettier --check .",
-    "lint:prettier:fix": "prettier --write .",
     "test": "cd test && npm run lint"
   },
   "prettier": "@mizdra/prettier-config-mizdra",
