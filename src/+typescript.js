@@ -13,25 +13,25 @@ module.exports = {
     project: true,
   },
   rules: {
-    // eslint
+    // ***** eslint *****
+    // tsc が 'use strict' を付与してくれるので、tsc に任せる
     'strict': 0,
-
-    // import
-    // eslint ではモジュールの解決に失敗することがあるので, TypeScriptに任せる
+    // 存在しない item の import は tsc が検知してくれるので、tsc に任せる
     // ref: https://github.com/benmosher/eslint-plugin-import/issues/1341
     'import/named': 0,
 
-    // @typescript-eslint (Basic Rules)
+    // ***** @typescript-eslint *****
+    // ** Supported Rules **
     // コーディングスタイル統一のため、`Array<T>` 形式を禁止して `T[]` の使用を推奨する
     '@typescript-eslint/array-type': 2,
     // ts-ignore は覚悟のある時にしか使わないので、いちいち lint error にする必要もない
     '@typescript-eslint/ban-ts-comment': 0,
-    // opinionated
     // コーディングスタイル統一のため、`<T> expr` 形式の型アサーションを禁止して `expr as T` の使用を推奨する
     '@typescript-eslint/consistent-type-assertions': 2,
-    // 強力すぎるため off に
+    // 強力すぎるため off に。プロジェクトごとに個別に ON にすることを想定している。
     '@typescript-eslint/explicit-module-boundary-types': 0,
     // コーディングスタイル統一のため、命名規則を設ける
+    'camelcase': 0,
     '@typescript-eslint/naming-convention': [
       1,
       {
@@ -90,8 +90,6 @@ module.exports = {
         format: null,
       },
     ],
-    // no-non-null-assertion は覚悟のある時にしか使わないので、いちいち lint error にする必要もない
-    '@typescript-eslint/no-non-null-assertion': 0,
     // `require` は静的解析と相性が悪いため禁止する。
     // 代わりに ES Modules の使用を推奨する。
     '@typescript-eslint/no-require-imports': 2,
@@ -102,16 +100,27 @@ module.exports = {
     // require type information
     '@typescript-eslint/require-array-sort-compare': 2,
 
-    // @typescript-eslint (Extension Rules)
+    // ** Extension Rules **
     // 型安全のため、`Array` コンストラクタを使って配列を生成する時は必ず型パラメーターを渡すよう強制する
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-array-constructor.md
     '@typescript-eslint/no-array-constructor': 2,
+    // `string | string` のような重複した型を定義するのはミスの可能性が高いので禁止する
+    '@typescript-eslint/no-duplicate-type-constituents': 2,
+    // コードを書いている途中によく怒られて煩すぎるので off
+    '@typescript-eslint/no-empty-function': 0,
     // eval 及び eval 相当の API はセキュリティとパフォーマンスのリスクがあるので使用を禁止する
     // require type information
+    'no-implied-eval': 0,
     '@typescript-eslint/no-implied-eval': 2,
-    // tsc の `noUnusedLocals` や `noUnusedParameters` のほうが賢く、煩すぎないので tsc に任せる
+    // リテラル値を throw するコードはミスのはずなので禁止
+    'no-throw-literal': 0,
+    '@typescript-eslint/no-throw-literal': 2,
+    // 不要な constructor は定義しないように
+    'no-useless-constructor': 0,
+    '@typescript-eslint/no-useless-constructor': 2,
+    // tsc の `noUnusedLocals` や `noUnusedParameters` よりも `_` で無視できるパターンが多くて便利なので有効
     'no-unused-vars': 0,
-    '@typescript-eslint/no-unused-vars': 0,
+    '@typescript-eslint/no-unused-vars': [2, { argsIgnorePattern: '^_' }],
     // 煩すぎるので off
     '@typescript-eslint/no-unsafe-argument': 0,
     // error だと未定義関数を呼び出した際に、実引数の部分まで赤く線が引かれて煩すぎる。
@@ -123,5 +132,8 @@ module.exports = {
     '@typescript-eslint/no-unsafe-member-access': 0,
     // 煩すぎるので off
     '@typescript-eslint/no-unsafe-return': 0,
+    // 一貫性のために `return await p` を `return p` に強制する
+    'no-return-await': 0,
+    '@typescript-eslint/return-await': 2,
   },
 };
