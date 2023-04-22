@@ -4,36 +4,13 @@ ESLint config for @mizdra
 
 ## Install
 
-Install along with all compatible peerDeps:
-
 ```bash
-# for npm
-npx install-peerdeps @mizdra/eslint-config-mizdra --dev
-# for pnpm
-npx install-peerdeps @mizdra/eslint-config-mizdra --dev --pnpm
-# for yarn
-npx install-peerdeps @mizdra/eslint-config-mizdra --dev --yarn
-```
-
-If you don't need all the peerDeps, you can install them manually:
-
-```bash
-# basic
-npm i -D @mizdra/eslint-config-mizdra eslint eslint-plugin-import
-
-# for +typescript
-npm i -D @typescript-eslint/eslint-plugin @typescript-eslint/parser typescript
-
-# for +react
-npm i -D eslint-plugin-react eslint-plugin-react-hooks
-
-# for +prettier
-npm i -D eslint-config-prettier prettier
+npm i -D @mizdra/eslint-config-mizdra eslint
 ```
 
 ## Usage
 
-### Legacy config
+### With legacy config
 
 ```javascript
 module.exports = {
@@ -57,7 +34,7 @@ module.exports = {
 };
 ```
 
-### Flat config
+### With flat config
 
 ```javascript
 // @ts-check
@@ -101,4 +78,53 @@ export default [
   }),
   ...compat.extends('@mizdra/mizdra/+prettier'),
 ];
+```
+
+## Built-in 3rd-party packages
+
+When `eslint-config-mizdra` is installed the following packages are installed as its [`dependencies`](https://docs.npmjs.com/cli/v8/configuring-npm/package-json#dependencies) for usability. The installed version is always the latest.
+
+- [`@typescript-eslint/eslint-plugin`](https://www.npmjs.com/package/@typescript-eslint/eslint-plugin)
+- [`@typescript-eslint/parser`](https://www.npmjs.com/package/@typescript-eslint/parser)
+- [`eslint-config-prettier`](https://www.npmjs.com/package/eslint-config-prettier)
+- [`eslint-plugin-import`](https://www.npmjs.com/package/eslint-plugin-import)
+- [`eslint-plugin-react`](https://www.npmjs.com/package/eslint-plugin-react)
+- [`eslint-plugin-react-hooks`](https://www.npmjs.com/package/eslint-plugin-react-hooks)
+
+## FAQ
+
+### How can we upgrade built-in 3rd-party packages?
+
+Uninstall `eslint-config-mizdra` and then reinstall it. It will then switch to the latest built-in 3rd-party packages.
+
+```bash
+npm un @mizdra/eslint-config-mizdra
+npm i -D @mizdra/eslint-config-mizdra
+```
+
+### How do we pin built-in 3rd-party packages to a specific version?
+
+Use the `overrides` field for [npm](https://docs.npmjs.com/cli/v8/configuring-npm/package-json#overrides) and [pnpm](https://pnpm.io/ja/package_json#pnpmoverrides), or the `resolutions` field for [yarn](https://yarnpkg.com/configuration/manifest/#resolutions).
+
+```json
+// package.json
+{
+  "overrides": {
+    "@typescript-eslint/parser": "^4.0.0"
+  }
+}
+```
+
+In npm and pnpm, you can also match the version written in `dependencies`.
+
+```json
+// package.json
+{
+  "dependencies": {
+    "@typescript-eslint/parser": "^4.0.0"
+  },
+  "overrides": {
+    "@typescript-eslint/parser": "$@typescript-eslint/parser"
+  }
+}
 ```
