@@ -120,7 +120,16 @@ module.exports = {
     '@typescript-eslint/no-useless-constructor': 2,
     // tsc の `noUnusedLocals` や `noUnusedParameters` よりも `_` で無視できるパターンが多くて便利なので有効
     'no-unused-vars': 0,
-    '@typescript-eslint/no-unused-vars': [2, { argsIgnorePattern: '^_' }],
+    '@typescript-eslint/no-unused-vars': [
+      2,
+      {
+        ignoreRestSiblings: true,
+        caughtErrors: 'all',
+        argsIgnorePattern: '^_',
+        destructuredArrayIgnorePattern: '^_',
+        caughtErrorsIgnorePattern: '^_',
+      },
+    ],
     // 煩すぎるので off
     '@typescript-eslint/no-unsafe-argument': 0,
     // error だと未定義関数を呼び出した際に、実引数の部分まで赤く線が引かれて煩すぎる。
