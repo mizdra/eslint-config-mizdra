@@ -72,7 +72,7 @@ module.exports = {
     // 引数の数は 5 以下にする
     'max-params': [2, 5],
     // JSDoc コメント以外では単一行コメントを優先する
-    'multiline-comment-style': [2, 'separate-lines', { checkJSDoc: true }],
+    'multiline-comment-style': [2, 'separate-lines'],
     // `Number` や `Symbol` などは `new` なしで使用する
     'new-cap': 2,
     // alert, confirm, prompt の使用を警告
