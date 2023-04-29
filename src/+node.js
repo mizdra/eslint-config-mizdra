@@ -1,4 +1,5 @@
 // @ts-check
+'use strict';
 
 const { builtinModules } = require('node:module');
 
