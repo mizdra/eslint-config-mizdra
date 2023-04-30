@@ -8,6 +8,10 @@ module.exports = /** @type {const} */ ({
   rules: {
     // import/no-extraneous-dependencies と重複するので off
     'n/no-extraneous-import': 0,
+    // tsc で検知できるので off
+    'n/no-missing-import': 0,
+    // tsc で検知できるので off
+    'n/no-missing-require': 0,
     // `import fs from 'fs'` ではなく `import fs from 'node:fs'` と書くように
     'unicorn/prefer-node-protocol': 2,
   },
