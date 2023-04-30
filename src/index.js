@@ -61,9 +61,6 @@ module.exports = {
     'default-param-last': 2,
     // `==` ではなく `===` を強制する
     'eqeqeq': [2, 'always'],
-    // コーディングスタイル統一のため、`const fn = function() { ... }` 形式の関数定義を禁止する。
-    // 代わりに `function fn() { ... }` か `const fn = () => { ... }` 形式の関数定義を推奨する。
-    'func-style': [2, 'declaration', { allowArrowFunctions: true }], // opinionated
     // 可読性のため、getter/setter は隣同士に書く
     'grouped-accessor-pairs': [2, 'getBeforeSet'],
     // 予期せぬ挙動を防ぐため、for-in を使用する場合は `hasOwn`/`hasOwnProperty` チェックを行うようにする
@@ -202,5 +199,10 @@ module.exports = {
     'import/order': [2, { alphabetize: { order: 'asc' } }],
     // package.json への追加忘れを防止
     'import/no-extraneous-dependencies': 2,
+
+    // ***** Opinionated *****
+    // コーディングスタイル統一のため、`const fn = function() { ... }` 形式の関数定義を禁止する。
+    // 代わりに `function fn() { ... }` か `const fn = () => { ... }` 形式の関数定義を推奨する。
+    'func-style': [2, 'declaration', { allowArrowFunctions: true }],
   },
 };

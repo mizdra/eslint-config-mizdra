@@ -21,6 +21,7 @@
     "lint": "run-s -c lint:*",
     "lint:eslint": "eslint .",
     "lint:prettier": "prettier --check .",
+    "lint:tsc": "tsc",
     "test": "cd test && npm run lint"
   },
   "prettier": "@mizdra/prettier-config-mizdra",
@@ -56,6 +57,8 @@
     "@eslint/eslintrc": "^2.0.2",
     "@eslint/js": "^8.38.0",
     "@mizdra/prettier-config-mizdra": "^1.0.0",
+    "@tsconfig/node18": "^2.0.0",
+    "@tsconfig/strictest": "^2.0.1",
     "@types/eslint": "^8.37.0",
     "@types/node": "^18.15.11",
     "@types/react": "^18.0.35",

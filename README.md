@@ -69,7 +69,7 @@ export default [
       {
         // For TypeScript
         files: ['*.ts', '*.tsx', '*.cts', '*.mts'],
-        extends: ['../src/+typescript.js'],
+        extends: ['@mizdra/mizdra/+typescript.js'],
         rules: {
           // Write your favorite rules for TypeScript
         },
