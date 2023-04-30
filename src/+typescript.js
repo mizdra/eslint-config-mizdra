@@ -1,8 +1,8 @@
 // @ts-check
 'use strict';
 
-/** @type import('eslint').Linter.BaseConfig */
-module.exports = {
+/** @satisfies {import('ts-essentials').DeepReadonly<import('eslint').Linter.BaseConfig>} */
+module.exports = /** @type {const} */ ({
   extends: [
     'plugin:@typescript-eslint/recommended',
     'plugin:@typescript-eslint/recommended-requiring-type-checking',
@@ -146,4 +146,4 @@ module.exports = {
     'no-return-await': 0,
     '@typescript-eslint/return-await': 2,
   },
-};
+});
