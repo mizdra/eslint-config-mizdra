@@ -1,4 +1,5 @@
 // @ts-check
+'use strict';
 
 /** @type {import('eslint').Linter.BaseConfig<import('eslint/rules').ESLintRules>} */
 module.exports = {

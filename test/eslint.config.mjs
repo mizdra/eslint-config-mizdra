@@ -17,7 +17,7 @@ export default [
   {
     ignores: ['.eslintrc.js', 'eslint.config.mjs'],
   },
-  ...compat.extends('../src/index.js', '../src/+react.js'),
+  ...compat.extends('../src/index.js'),
   {
     languageOptions: { ecmaVersion: 2021 },
     linterOptions: { reportUnusedDisableDirectives: true },
@@ -25,9 +25,20 @@ export default [
   ...compat.config({
     overrides: [
       {
-        // For TypeScript
-        files: ['*.ts', '*.tsx', '*.cts', '*.mts'],
+        files: ['+typescript.ts'],
         extends: ['../src/+typescript.js'],
+      },
+      {
+        files: ['+node.js'],
+        extends: ['../src/+node.js'],
+      },
+      {
+        files: ['+react.js'],
+        extends: ['../src/+react.js'],
+      },
+      {
+        files: ['+prettier.js'],
+        extends: ['../src/+prettier.js'],
       },
     ],
   }),
