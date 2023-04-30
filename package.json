@@ -71,6 +71,6 @@
     "typescript": "^5.0.3"
   },
   "files": [
-    "*.js"
+    "src"
   ]
 }
