@@ -1,8 +1,8 @@
 // @ts-check
 'use strict';
 
-/** @type {import('eslint').Linter.BaseConfig<import('eslint/rules').ESLintRules>} */
-module.exports = {
+/** @satisfies {import('ts-essentials').DeepReadonly<import('eslint').Linter.BaseConfig>} */
+module.exports = /** @type {const} */ ({
   extends: ['eslint:recommended', 'plugin:import/recommended'],
   parserOptions: {
     // 現代では type="script" な環境で JS を書くことはまずないので、
@@ -205,4 +205,4 @@ module.exports = {
     // 代わりに `function fn() { ... }` か `const fn = () => { ... }` 形式の関数定義を推奨する。
     'func-style': [2, 'declaration', { allowArrowFunctions: true }],
   },
-};
+});

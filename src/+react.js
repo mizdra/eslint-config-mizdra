@@ -1,8 +1,8 @@
 // @ts-check
 'use strict';
 
-/** @type import('eslint').Linter.BaseConfig */
-module.exports = {
+/** @satisfies {import('ts-essentials').DeepReadonly<import('eslint').Linter.BaseConfig>} */
+module.exports = /** @type {const} */ ({
   extends: [
     // react
     'plugin:react/recommended',
@@ -38,4 +38,4 @@ module.exports = {
     // 現代では TypeScript で型を制限することが多いので、propTypes は使わない
     'react/prop-types': 0,
   },
-};
+});

@@ -1,7 +1,7 @@
 // @ts-check
 'use strict';
 
-/** @type import('eslint').Linter.BaseConfig */
-module.exports = {
+/** @satisfies {import('ts-essentials').DeepReadonly<import('eslint').Linter.BaseConfig>} */
+module.exports = /** @type {const} */ ({
   extends: ['prettier'],
-};
+});

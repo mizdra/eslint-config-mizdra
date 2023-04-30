@@ -10,8 +10,8 @@ const noRestrictedConfig = {
   })),
 };
 
-/** @type {import('eslint').Linter.BaseConfig} */
-module.exports = {
+/** @satisfies {import('ts-essentials').DeepReadonly<import('eslint').Linter.BaseConfig>} */
+module.exports = /** @type {const} */ ({
   extends: ['plugin:n/recommended'],
   rules: {
     // import/no-extraneous-dependencies と重複するので off
@@ -21,4 +21,4 @@ module.exports = {
     // no-restricted-imports の require 版
     'no-restricted-modules': [2, noRestrictedConfig],
   },
-};
+});
