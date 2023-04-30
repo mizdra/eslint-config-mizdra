@@ -1,7 +1,7 @@
 // @ts-check
 'use strict';
 
-/** @type import('eslint').Linter.BaseConfig */
+/** @type {import('eslint').Linter.BaseConfig} */
 module.exports = {
   root: true,
   extends: ['./src/index.js', './src/+node.js', './src/+prettier.js'],
