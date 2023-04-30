@@ -5,6 +5,7 @@
   "main": "src/index.js",
   "exports": {
     ".": "./src/index.js",
+    "./+node": "./src/+node.js",
     "./+typescript": "./src/+typescript.js",
     "./+react": "./src/+react.js",
     "./+prettier": "./src/+prettier.js"
