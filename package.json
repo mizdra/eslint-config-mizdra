@@ -59,7 +59,7 @@
     "@eslint/eslintrc": "^2.0.3",
     "@eslint/js": "^8.38.0",
     "@mizdra/prettier-config-mizdra": "^1.0.0",
-    "@tsconfig/node18": "^2.0.0",
+    "@tsconfig/node18": "^2.0.1",
     "@tsconfig/strictest": "^2.0.1",
     "@types/eslint": "^8.37.0",
     "@types/node": "^18.15.11",
