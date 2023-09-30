@@ -57,7 +57,7 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^2.1.2",
-    "@eslint/js": "^8.48.0",
+    "@eslint/js": "^8.50.0",
     "@mizdra/prettier-config-mizdra": "^1.0.0",
     "@tsconfig/node18": "^2.0.1",
     "@tsconfig/strictest": "^2.0.2",
