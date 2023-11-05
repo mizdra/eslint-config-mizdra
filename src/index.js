@@ -43,8 +43,6 @@ module.exports = /** @type {const} */ ({
         caughtErrors: 'all',
       },
     ],
-    // 変数宣言の巻き上げに依存したコードは可読性が悪いので禁止 (ただし関数宣言の場合は許可)
-    'no-use-before-define': [2, { functions: false }],
     // `val += await asyncFunc()` のようなコードはよきせぬ挙動を引き起こす可能性があるので禁止
     'require-atomic-updates': 2,
 
