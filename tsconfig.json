@@ -1,6 +1,6 @@
 {
   "extends": ["@tsconfig/strictest/tsconfig.json", "@tsconfig/node18/tsconfig.json"],
-  "exclude": ["node_modules"],
+  "exclude": ["node_modules", "test"],
   "compilerOptions": {
     "module": "Node16",
     "moduleResolution": "node16",
