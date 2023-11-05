@@ -1,9 +1,7 @@
 // @ts-check
 /* eslint-disable */
 
-// @ts-expect-error
 import { FlatCompat } from '@eslint/eslintrc';
-// @ts-expect-error
 import js from '@eslint/js';
 
 const __dirname = new URL('.', import.meta.url).pathname;
