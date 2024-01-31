@@ -56,7 +56,7 @@
     "eslint-plugin-unicorn": ">=48.0.1"
   },
   "devDependencies": {
-    "@eslint/eslintrc": "^2.1.2",
+    "@eslint/eslintrc": "^3.0.0",
     "@eslint/js": "^8.52.0",
     "@mizdra/prettier-config-mizdra": "^1.0.0",
     "@tsconfig/node18": "^2.0.1",
