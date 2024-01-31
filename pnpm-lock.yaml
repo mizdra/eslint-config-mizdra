@@ -41,8 +41,8 @@ devDependencies:
     specifier: ^1.0.0
     version: 1.0.0(prettier@2.8.8)
   '@tsconfig/node18':
-    specifier: ^2.0.1
-    version: 2.0.1
+    specifier: ^18.2.2
+    version: 18.2.2
   '@tsconfig/strictest':
     specifier: ^2.0.2
     version: 2.0.2
@@ -192,8 +192,8 @@ packages:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.15.0
 
-  /@tsconfig/node18@2.0.1:
-    resolution: {integrity: sha512-UqdfvuJK0SArA2CxhKWwwAWfnVSXiYe63bVpMutc27vpngCntGUZQETO24pEJ46zU6XM+7SpqYoMgcO3bM11Ew==}
+  /@tsconfig/node18@18.2.2:
+    resolution: {integrity: sha512-d6McJeGsuoRlwWZmVIeE8CUA27lu6jLjvv1JzqmpsytOYYbVi1tHZEnwCNVOXnj4pyLvneZlFlpXUK+X9wBWyw==}
     dev: true
 
   /@tsconfig/strictest@2.0.2:
