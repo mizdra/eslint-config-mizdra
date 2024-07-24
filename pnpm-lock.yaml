@@ -27,7 +27,7 @@ dependencies:
     specifier: '>=4.0.0'
     version: 4.6.0(eslint@8.53.0)
   eslint-plugin-unicorn:
-    specifier: '>=48.0.1'
+    specifier: '>=49.0.0'
     version: 49.0.0(eslint@8.53.0)
 
 devDependencies:
