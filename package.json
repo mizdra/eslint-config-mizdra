@@ -61,7 +61,7 @@
     "@mizdra/prettier-config-mizdra": "^1.0.0",
     "@tsconfig/node18": "^18.2.2",
     "@tsconfig/strictest": "^2.0.2",
-    "@types/eslint": "^8.44.3",
+    "@types/eslint": "^9.6.0",
     "@types/node": "^18.18.8",
     "@types/react": "^18.0.35",
     "@typescript-eslint/eslint-plugin": "^5.58.0",
