@@ -20,8 +20,8 @@
   },
   "scripts": {
     "lint": "run-s -c lint:*",
-    "lint:eslint": "eslint .",
-    "lint:prettier": "prettier --check .",
+    "lint:eslint": "eslint --cache --cache-strategy content .",
+    "lint:prettier": "prettier --cache --check .",
     "lint:tsc": "tsc",
     "test": "cd test && npm run lint"
   },
