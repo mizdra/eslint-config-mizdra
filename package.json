@@ -2,7 +2,6 @@
   "name": "@mizdra/eslint-config-mizdra",
   "version": "2.1.0-alpha.0",
   "description": "ESLint config for @mizdra",
-  "main": "src/index.js",
   "exports": {
     ".": "./src/index.js",
     "./+node": "./src/+node.js",
@@ -20,8 +19,8 @@
   },
   "scripts": {
     "lint": "run-s -c lint:*",
-    "lint:eslint": "eslint .",
-    "lint:prettier": "prettier --check .",
+    "lint:eslint": "eslint --cache --cache-strategy content .",
+    "lint:prettier": "prettier --cache --check .",
     "lint:tsc": "tsc",
     "test": "cd test && npm run lint"
   },
@@ -58,22 +57,19 @@
   "devDependencies": {
     "@eslint/eslintrc": "^3.0.0",
     "@eslint/js": "^8.52.0",
-    "@mizdra/prettier-config-mizdra": "^1.0.0",
-    "@tsconfig/node18": "^18.2.2",
-    "@tsconfig/strictest": "^2.0.2",
+    "@mizdra/prettier-config-mizdra": "^2.0.0",
     "@types/eslint": "^9.6.0",
-    "@types/node": "^18.18.8",
-    "@types/react": "^18.0.35",
+    "@types/node": "^22.3.0",
+    "@types/react": "^18.3.3",
     "@typescript-eslint/eslint-plugin": "^5.58.0",
     "@typescript-eslint/parser": "^5.58.0",
     "eslint": "^8.50.0",
     "eslint-config-prettier": "^8.10.0",
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
-    "npm-run-all2": "^5.0.0",
-    "prettier": "~2.8.8",
-    "ts-essentials": "^9.3.2",
-    "typescript": "^5.0.4"
+    "npm-run-all2": "^6.2.2",
+    "prettier": "~3.3.3",
+    "typescript": "^5.5.4 "
   },
   "files": [
     "src"

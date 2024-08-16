@@ -1,7 +1,7 @@
 // @ts-check
 'use strict';
 
-/** @satisfies {import('ts-essentials').DeepReadonly<import('eslint').Linter.BaseConfig>} */
+/** @satisfies {import('eslint').Linter.BaseConfig} */
 module.exports = /** @type {const} */ ({
   extends: [
     'plugin:@typescript-eslint/recommended',
