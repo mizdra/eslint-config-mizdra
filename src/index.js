@@ -110,8 +110,6 @@ module.exports = /** @type {const} */ ({
     'no-param-reassign': 2,
     // `__proto__` は仕様で非推奨になっているので禁止
     'no-proto': 2,
-    // 一貫性のために `return await p` を `return p` に強制する
-    'no-return-await': 2,
     // コンマ演算子は使うことないので禁止
     'no-sequences': 2,
     // リテラル値を throw するコードはミスのはずなので禁止
