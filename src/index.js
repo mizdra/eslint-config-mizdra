@@ -100,10 +100,10 @@ module.exports = /** @type {const} */ ({
     'no-new': 2,
     // new Function() は eval に近い挙動をするので禁止
     'no-new-func': 2,
-    // `new Object()` ではなく `{}` を強制する
-    'no-new-object': 2,
     // `new String()` ではなく `'foo'` を強制する
     'no-new-wrappers': 2,
+    // `new Object()` ではなく `{}` を強制する
+    'no-object-constructor': 2,
     // octal escape は使うことない & 書いてたらミスのはずなので禁止
     'no-octal-escape': 2,
     // 関数の引数への代入は禁止
