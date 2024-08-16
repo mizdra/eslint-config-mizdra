@@ -6,7 +6,7 @@ module.exports = /** @type {const} */ ({
   extends: ['plugin:n/recommended'],
   plugins: ['unicorn'],
   rules: {
-    // import/no-extraneous-dependencies と重複するので off
+    // import-x/no-extraneous-dependencies と重複するので off
     'n/no-extraneous-import': 0,
     // tsc で検知できるので off
     'n/no-missing-import': 0,
