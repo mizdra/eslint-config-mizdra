@@ -113,9 +113,6 @@ module.exports = /** @type {const} */ ({
     // require type information
     'no-implied-eval': 0,
     '@typescript-eslint/no-implied-eval': 2,
-    // リテラル値を throw するコードはミスのはずなので禁止
-    'no-throw-literal': 0,
-    '@typescript-eslint/no-throw-literal': 2,
     // 不要な constructor は定義しないように
     'no-useless-constructor': 0,
     '@typescript-eslint/no-useless-constructor': 2,
