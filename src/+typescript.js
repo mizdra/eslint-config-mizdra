@@ -9,9 +9,7 @@ module.exports = /** @type {const} */ ({
     'plugin:import-x/typescript',
   ],
   parserOptions: {
-    // lint 対象のファイルに最も近い tsconfig.json を利用する。tsserver の挙動と同じなのでトラブルも少ないはず。
-    // ref: https://typescript-eslint.io/architecture/parser#project
-    project: true,
+    projectService: true,
   },
   rules: {
     // ***** eslint *****
