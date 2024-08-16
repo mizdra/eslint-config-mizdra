@@ -164,8 +164,6 @@ module.exports = /** @type {const} */ ({
     'require-unicode-regexp': 2,
     // コメントの開始にはスペースを必須とする
     'spaced-comment': [2, 'always'],
-    // ESM 以外では `'use strict';` を必須とする
-    'strict': 2,
     // Symbol には説明を付ける
     'symbol-description': 2,
 

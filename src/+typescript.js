@@ -9,8 +9,6 @@ module.exports = /** @type {const} */ ({
   },
   rules: {
     // ***** eslint *****
-    // tsc が 'use strict' を付与してくれるので、tsc に任せる
-    'strict': 0,
     // 存在しない item の import は tsc が検知してくれるので、tsc に任せる
     // ref: https://github.com/benmosher/eslint-plugin-import/issues/1341
     'import-x/named': 0,
