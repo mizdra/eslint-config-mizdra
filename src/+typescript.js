@@ -6,7 +6,7 @@ module.exports = /** @type {const} */ ({
   extends: [
     'plugin:@typescript-eslint/recommended',
     'plugin:@typescript-eslint/recommended-requiring-type-checking',
-    'plugin:import/typescript',
+    'plugin:import-x/typescript',
   ],
   parserOptions: {
     // lint 対象のファイルに最も近い tsconfig.json を利用する。tsserver の挙動と同じなのでトラブルも少ないはず。
@@ -19,7 +19,7 @@ module.exports = /** @type {const} */ ({
     'strict': 0,
     // 存在しない item の import は tsc が検知してくれるので、tsc に任せる
     // ref: https://github.com/benmosher/eslint-plugin-import/issues/1341
-    'import/named': 0,
+    'import-x/named': 0,
 
     // ***** @typescript-eslint *****
     // ** Supported Rules **
