@@ -31,15 +31,17 @@ module.exports = /** @type {const} */ ({
     'no-unmodified-loop-condition': 1,
     // 2 回ループすることがないループ文を禁止
     'no-unreachable-loop': 2,
-    // - `const { unusedProp, ...usedRestProps } = obj;` のようなコードはJSではよく書かれるので、`unusedProp` が未使用であると警告しないように
-    // - `_` 始まりの変数は未使用変数を表す、という文化に沿って `_` 始まりの変数は未使用であっても警告しないように
-    // - エラーを無視しないよう、catch 節のエラーオブジェクトが未使用の場合は警告する
+    // 未使用変数を禁止する
     'no-unused-vars': [
       2,
       {
-        ignoreRestSiblings: true,
+        args: 'all',
         argsIgnorePattern: '^_',
         caughtErrors: 'all',
+        caughtErrorsIgnorePattern: '^_',
+        destructuredArrayIgnorePattern: '^_',
+        varsIgnorePattern: '^_',
+        ignoreRestSiblings: true,
       },
     ],
     // `val += await asyncFunc()` のようなコードはよきせぬ挙動を引き起こす可能性があるので禁止
