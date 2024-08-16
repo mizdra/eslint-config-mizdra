@@ -4,6 +4,7 @@
 /** @satisfies {import('eslint').Linter.BaseConfig} */
 module.exports = /** @type {const} */ ({
   extends: ['eslint:recommended', 'plugin:import-x/recommended'],
+  reportUnusedDisableDirectives: true,
   parserOptions: {
     // 現代では type="script" な環境で JS を書くことはまずないので、
     // デフォルトで type="module" なJSであるとして lint する
