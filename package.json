@@ -2,7 +2,6 @@
   "name": "@mizdra/eslint-config-mizdra",
   "version": "2.1.0-alpha.0",
   "description": "ESLint config for @mizdra",
-  "main": "src/index.js",
   "exports": {
     ".": "./src/index.js",
     "./+node": "./src/+node.js",
