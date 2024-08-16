@@ -9,9 +9,6 @@ module.exports = /** @type {const} */ ({
   },
   rules: {
     // ***** eslint *****
-    // 存在しない item の import は tsc が検知してくれるので、tsc に任せる
-    // ref: https://github.com/benmosher/eslint-plugin-import/issues/1341
-    'import-x/named': 0,
 
     // ***** @typescript-eslint *****
     // ** Supported Rules **
@@ -21,8 +18,6 @@ module.exports = /** @type {const} */ ({
     '@typescript-eslint/ban-ts-comment': 0,
     // コーディングスタイル統一のため、`<T> expr` 形式の型アサーションを禁止して `expr as T` の使用を推奨する
     '@typescript-eslint/consistent-type-assertions': 2,
-    // 強力すぎるため off に。プロジェクトごとに個別に ON にすることを想定している。
-    '@typescript-eslint/explicit-module-boundary-types': 0,
     // コーディングスタイル統一のため、命名規則を設ける
     'camelcase': 0,
     '@typescript-eslint/naming-convention': [
@@ -83,9 +78,6 @@ module.exports = /** @type {const} */ ({
         format: null,
       },
     ],
-    // `require` は静的解析と相性が悪いため禁止する。
-    // 代わりに ES Modules の使用を推奨する。
-    '@typescript-eslint/no-require-imports': 2,
     // 可読性及びコードリーディングスタイルの統一のため、promise を返す関数では async を付けることを強制する
     // require type information
     '@typescript-eslint/promise-function-async': 2,
@@ -94,17 +86,6 @@ module.exports = /** @type {const} */ ({
     '@typescript-eslint/require-array-sort-compare': 2,
 
     // ** Extension Rules **
-    // 型安全のため、`Array` コンストラクタを使って配列を生成する時は必ず型パラメーターを渡すよう強制する
-    // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-array-constructor.md
-    '@typescript-eslint/no-array-constructor': 2,
-    // `string | string` のような重複した型を定義するのはミスの可能性が高いので禁止する
-    '@typescript-eslint/no-duplicate-type-constituents': 2,
-    // コードを書いている途中によく怒られて煩すぎるので off
-    '@typescript-eslint/no-empty-function': 0,
-    // eval 及び eval 相当の API はセキュリティとパフォーマンスのリスクがあるので使用を禁止する
-    // require type information
-    'no-implied-eval': 0,
-    '@typescript-eslint/no-implied-eval': 2,
     // 不要な constructor は定義しないように
     'no-useless-constructor': 0,
     '@typescript-eslint/no-useless-constructor': 2,
@@ -113,11 +94,11 @@ module.exports = /** @type {const} */ ({
     '@typescript-eslint/no-unused-vars': [
       2,
       {
-        ignoreRestSiblings: true,
-        caughtErrors: 'all',
         argsIgnorePattern: '^_',
-        destructuredArrayIgnorePattern: '^_',
+        caughtErrors: 'all',
         caughtErrorsIgnorePattern: '^_',
+        destructuredArrayIgnorePattern: '^_',
+        ignoreRestSiblings: true,
       },
     ],
     // 煩すぎるので off
@@ -131,8 +112,5 @@ module.exports = /** @type {const} */ ({
     '@typescript-eslint/no-unsafe-member-access': 0,
     // 煩すぎるので off
     '@typescript-eslint/no-unsafe-return': 0,
-    // 一貫性のために `return await p` を `return p` に強制する
-    'no-return-await': 0,
-    '@typescript-eslint/return-await': 2,
   },
 });

@@ -31,8 +31,6 @@ module.exports = /** @type {const} */ ({
     'no-unmodified-loop-condition': 1,
     // 2 回ループすることがないループ文を禁止
     'no-unreachable-loop': 2,
-    // 未使用の private class を禁止
-    'no-unused-private-class-members': 2,
     // - `const { unusedProp, ...usedRestProps } = obj;` のようなコードはJSではよく書かれるので、`unusedProp` が未使用であると警告しないように
     // - `_` 始まりの変数は未使用変数を表す、という文化に沿って `_` 始まりの変数は未使用であっても警告しないように
     // - エラーを無視しないよう、catch 節のエラーオブジェクトが未使用の場合は警告する
@@ -78,8 +76,6 @@ module.exports = /** @type {const} */ ({
     'no-array-constructor': 2,
     // 可読性のため `arguments.caller` `arguments.callee` を禁止
     'no-caller': 2,
-    // 予期せぬ挙動になるため、case 句での変数宣言を禁止
-    'no-case-declarations': 2,
     // console の使用を警告
     'no-console': 1,
     // 煩すぎるので off
