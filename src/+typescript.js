@@ -3,11 +3,7 @@
 
 /** @satisfies {import('eslint').Linter.BaseConfig} */
 module.exports = /** @type {const} */ ({
-  extends: [
-    'plugin:@typescript-eslint/recommended',
-    'plugin:@typescript-eslint/recommended-requiring-type-checking',
-    'plugin:import-x/typescript',
-  ],
+  extends: ['plugin:@typescript-eslint/recommended-type-checked', 'plugin:import-x/typescript'],
   parserOptions: {
     projectService: true,
   },
