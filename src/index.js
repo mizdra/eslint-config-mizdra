@@ -4,6 +4,7 @@
 /** @satisfies {import('eslint').Linter.BaseConfig} */
 module.exports = /** @type {const} */ ({
   extends: ['eslint:recommended', 'plugin:import-x/recommended'],
+  reportUnusedDisableDirectives: true,
   parserOptions: {
     // 現代では type="script" な環境で JS を書くことはまずないので、
     // デフォルトで type="module" なJSであるとして lint する
@@ -30,17 +31,17 @@ module.exports = /** @type {const} */ ({
     'no-unmodified-loop-condition': 1,
     // 2 回ループすることがないループ文を禁止
     'no-unreachable-loop': 2,
-    // 未使用の private class を禁止
-    'no-unused-private-class-members': 2,
-    // - `const { unusedProp, ...usedRestProps } = obj;` のようなコードはJSではよく書かれるので、`unusedProp` が未使用であると警告しないように
-    // - `_` 始まりの変数は未使用変数を表す、という文化に沿って `_` 始まりの変数は未使用であっても警告しないように
-    // - エラーを無視しないよう、catch 節のエラーオブジェクトが未使用の場合は警告する
+    // 未使用変数を禁止する
     'no-unused-vars': [
       2,
       {
-        ignoreRestSiblings: true,
+        args: 'all',
         argsIgnorePattern: '^_',
         caughtErrors: 'all',
+        caughtErrorsIgnorePattern: '^_',
+        destructuredArrayIgnorePattern: '^_',
+        varsIgnorePattern: '^_',
+        ignoreRestSiblings: true,
       },
     ],
     // `val += await asyncFunc()` のようなコードはよきせぬ挙動を引き起こす可能性があるので禁止
@@ -77,8 +78,6 @@ module.exports = /** @type {const} */ ({
     'no-array-constructor': 2,
     // 可読性のため `arguments.caller` `arguments.callee` を禁止
     'no-caller': 2,
-    // 予期せぬ挙動になるため、case 句での変数宣言を禁止
-    'no-case-declarations': 2,
     // console の使用を警告
     'no-console': 1,
     // 煩すぎるので off
@@ -101,18 +100,16 @@ module.exports = /** @type {const} */ ({
     'no-new': 2,
     // new Function() は eval に近い挙動をするので禁止
     'no-new-func': 2,
-    // `new Object()` ではなく `{}` を強制する
-    'no-new-object': 2,
     // `new String()` ではなく `'foo'` を強制する
     'no-new-wrappers': 2,
+    // `new Object()` ではなく `{}` を強制する
+    'no-object-constructor': 2,
     // octal escape は使うことない & 書いてたらミスのはずなので禁止
     'no-octal-escape': 2,
     // 関数の引数への代入は禁止
     'no-param-reassign': 2,
     // `__proto__` は仕様で非推奨になっているので禁止
     'no-proto': 2,
-    // 一貫性のために `return await p` を `return p` に強制する
-    'no-return-await': 2,
     // コンマ演算子は使うことないので禁止
     'no-sequences': 2,
     // リテラル値を throw するコードはミスのはずなので禁止
@@ -163,8 +160,6 @@ module.exports = /** @type {const} */ ({
     'require-unicode-regexp': 2,
     // コメントの開始にはスペースを必須とする
     'spaced-comment': [2, 'always'],
-    // ESM 以外では `'use strict';` を必須とする
-    'strict': 2,
     // Symbol には説明を付ける
     'symbol-description': 2,
 
