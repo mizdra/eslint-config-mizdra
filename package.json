@@ -32,7 +32,7 @@
   },
   "prettier": "@mizdra/prettier-config-mizdra",
   "engines": {
-    "node": ">=16.0.0"
+    "node": ">=18.0.0"
   },
   "peerDependencies": {
     "@types/eslint": ">=8.56.11",
