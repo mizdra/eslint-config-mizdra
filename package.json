@@ -82,6 +82,7 @@
     "typescript": "^5.5.4"
   },
   "files": [
-    "src"
+    "src",
+    "!src/typings"
   ]
 }
