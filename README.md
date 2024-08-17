@@ -10,6 +10,29 @@ npm i -D @mizdra/eslint-config-mizdra eslint
 
 ## 使い方
 
+### flat config から使う場合
+
+```javascript
+// @ts-check
+import mizdra from '@mizdra/eslint-plugin-mizdra/flat';
+
+/** @type {import('eslint').Linter.FlatConfig[]} */
+export default [
+  { ignores: ['**/dist'] },
+  ...mizdra.baseConfigs,
+  ...mizdra.typescriptConfigs,
+  ...mizdra.nodeConfigs,
+  ...mizdra.reactConfigs,
+  {
+    files: ['**/*.{js,jsx,mjs,cjs}', '**/*.{ts,tsx,cts,mts}'],
+    rules: {
+      // Write your favorite rules
+    },
+  },
+  mizdra.prettierConfig,
+];
+```
+
 ### legacy config から使う場合
 
 ```javascript
@@ -35,29 +58,6 @@ module.exports = {
     },
   ],
 };
-```
-
-### flat config から使う場合
-
-```javascript
-// @ts-check
-import mizdra from '@mizdra/eslint-plugin-mizdra/flat';
-
-/** @type {import('eslint').Linter.FlatConfig[]} */
-export default [
-  { ignores: ['**/dist'] },
-  ...mizdra.baseConfigs,
-  ...mizdra.typescriptConfigs,
-  ...mizdra.nodeConfigs,
-  ...mizdra.reactConfigs,
-  {
-    files: ['**/*.{js,jsx,mjs,cjs}', '**/*.{ts,tsx,cts,mts}'],
-    rules: {
-      // Write your favorite rules
-    },
-  },
-  mizdra.prettierConfig,
-];
 ```
 
 ## 組み込みの 3rd-party packages
