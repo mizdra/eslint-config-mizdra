@@ -1,13 +1,14 @@
 import js from '@eslint/js';
 
 import legacyBase from '../../index.js';
-import { compat, jsPattern, tsPattern } from '../util.mjs';
+import { commonjsPattern, compat, jsPattern, tsPattern } from '../util.mjs';
 
 export const baseConfigs = /** @satisfies {import('eslint').Linter.Config[]} */ ([
-  js.configs.recommended,
-  ...compat.extends('plugin:import-x/recommended'),
+  { ...js.configs.recommended, files: [jsPattern, tsPattern] },
+  ...compat.extends('plugin:import-x/recommended').map((config) => ({ ...config, files: [jsPattern, tsPattern] })),
   {
     name: '@mizdra/eslint-config-mizdra/base',
+    files: [jsPattern, tsPattern],
     linterOptions: {
       reportUnusedDisableDirectives: 'error',
     },
@@ -19,8 +20,19 @@ export const baseConfigs = /** @satisfies {import('eslint').Linter.Config[]} */ 
       // languageOptions.parserOptions.ecmaVersion は何故か 'latest' がデフォルトではない。
       parserOptions: {
         ecmaVersion: 'latest',
+        sourceType: 'module',
       },
     },
     rules: legacyBase.rules,
   },
-]).map((config) => ({ ...config, files: [jsPattern, tsPattern] }));
+  {
+    name: '@mizdra/eslint-config-mizdra/base/commonjs',
+    files: [commonjsPattern],
+    languageOptions: {
+      sourceType: 'commonjs',
+      parserOptions: {
+        sourceType: 'commonjs',
+      },
+    },
+  },
+]);
