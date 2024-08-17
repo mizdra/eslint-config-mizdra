@@ -13,6 +13,13 @@ export const baseConfigs = /** @satisfies {import('eslint').Linter.Config[]} */ 
     },
     languageOptions: {
       sourceType: 'module',
+      // languageOptions.parserOptions.ecmaVersion を 2015 以上にしないと、
+      // sourceType: 'module' が使えないので、'latest' にする。
+      // MEMO: languageOptions.ecmaVersion は 'latest' がデフォルトだが、
+      // languageOptions.parserOptions.ecmaVersion は何故か 'latest' がデフォルトではない。
+      parserOptions: {
+        ecmaVersion: 'latest',
+      },
     },
     rules: legacyBase.rules,
   },
