@@ -14,7 +14,7 @@ npm i -D @mizdra/eslint-config-mizdra eslint
 
 ```javascript
 // @ts-check
-import mizdra from '@mizdra/eslint-plugin-mizdra/flat';
+import mizdra from '@mizdra/eslint-config-mizdra/flat';
 
 /** @type {import('eslint').Linter.FlatConfig[]} */
 export default [
