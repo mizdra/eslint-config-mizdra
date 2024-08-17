@@ -7,7 +7,13 @@
     "./+node": "./src/+node.js",
     "./+typescript": "./src/+typescript.js",
     "./+react": "./src/+react.js",
-    "./+prettier": "./src/+prettier.js"
+    "./+prettier": "./src/+prettier.js",
+    "./flat": {
+      "import": {
+        "types": "./src/flat/index.d.mts",
+        "default": "./src/flat/index.mjs"
+      }
+    }
   },
   "repository": "https://github.com/mizdra/eslint-config-mizdra",
   "author": "mizdra <pp.mizdra@gmail.com>",
@@ -29,11 +35,15 @@
     "node": ">=16.0.0"
   },
   "peerDependencies": {
+    "@types/eslint": ">=8.56.11",
     "eslint": ">=8.50.0",
     "prettier": ">=2.0.5",
     "typescript": ">=3.9.3"
   },
   "peerDependenciesMeta": {
+    "@types/eslint": {
+      "optional": true
+    },
     "eslint": {
       "optional": false
     },
@@ -45,6 +55,8 @@
     }
   },
   "dependencies": {
+    "@eslint/eslintrc": "^3.1.0",
+    "@eslint/js": ">=8.33.0",
     "@typescript-eslint/eslint-plugin": ">=8.1.0",
     "@typescript-eslint/parser": ">=8.1.0",
     "eslint-config-prettier": ">=9.1.0",
@@ -52,13 +64,16 @@
     "eslint-plugin-n": ">=17.10.2",
     "eslint-plugin-react": ">=7.35.0",
     "eslint-plugin-react-hooks": ">=4.6.2",
-    "eslint-plugin-unicorn": ">=55.0.0"
+    "eslint-plugin-unicorn": ">=55.0.0",
+    "globals": ">=15.9.0",
+    "typescript-eslint": ">=8.1.0"
   },
   "devDependencies": {
-    "@eslint/eslintrc": "^3.0.0",
-    "@eslint/js": "^8.52.0",
     "@mizdra/prettier-config-mizdra": "^2.0.0",
     "@types/eslint": "^9.6.0",
+    "@types/eslint__eslintrc": "^2.1.2",
+    "@types/eslint__js": "^8.42.3",
+    "@types/eslint-config-prettier": "^6.11.3",
     "@types/node": "^22.3.0",
     "@types/react": "^18.3.3",
     "eslint": "^8.50.0",
