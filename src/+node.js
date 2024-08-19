@@ -4,7 +4,6 @@
 /** @satisfies {import('eslint').Linter.BaseConfig} */
 module.exports = /** @type {const} */ ({
   extends: ['plugin:n/recommended'],
-  plugins: ['unicorn'],
   rules: {
     // import-x/no-extraneous-dependencies と重複するので off
     'n/no-extraneous-import': 0,
