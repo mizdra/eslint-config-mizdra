@@ -13,6 +13,6 @@ module.exports = /** @type {const} */ ({
     // tsc で検知できるので off
     'n/no-missing-require': 0,
     // `import fs from 'fs'` ではなく `import fs from 'node:fs'` と書くように
-    'unicorn/prefer-node-protocol': 2,
+    'n/prefer-node-protocol': 2,
   },
 });

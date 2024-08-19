@@ -1,2 +1,2 @@
-// eslint-disable-next-line no-unused-vars, unicorn/prefer-node-protocol
+// eslint-disable-next-line no-unused-vars, n/prefer-node-protocol
 const fs = require('fs');
