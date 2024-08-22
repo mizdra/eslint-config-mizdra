@@ -14,11 +14,10 @@ export const baseConfigs = /** @satisfies {import('eslint').Linter.Config[]} */ 
     },
     languageOptions: {
       sourceType: 'module',
-      // languageOptions.parserOptions.ecmaVersion を 2015 以上にしないと、
-      // sourceType: 'module' が使えないので、'latest' にする。
-      // MEMO: languageOptions.ecmaVersion は 'latest' がデフォルトだが、
-      // languageOptions.parserOptions.ecmaVersion は何故か 'latest' がデフォルトではない。
       parserOptions: {
+        // Flat Config では `parserOptions` に `ecmaVersion`/`sourceType` は存在しないことになっているが、
+        // Legacy Config 時代に作られた custom rule では以前として `parserOptions.ecmaVersion` などを参照している。
+        // そのため、`parserOptions` に `ecmaVersion`/`sourceType` を設定しておく。
         ecmaVersion: 'latest',
         sourceType: 'module',
       },

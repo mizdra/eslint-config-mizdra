@@ -71,7 +71,6 @@ module.exports = {
 - [`eslint-plugin-n`](https://www.npmjs.com/package/eslint-plugin-n)
 - [`eslint-plugin-react`](https://www.npmjs.com/package/eslint-plugin-react)
 - [`eslint-plugin-react-hooks`](https://www.npmjs.com/package/eslint-plugin-react-hooks)
-- [`eslint-plugin-unicorn`](https://www.npmjs.com/package/eslint-plugin-unicorn)
 
 インストールされるバージョンは、`eslint-config-mizdra` をインストールした時点で最も最新のものです。一度インストールされると、package-lock.json などによりバージョンが固定されます。最新のバージョンにアップデートする方法や、好きなバージョンに固定する方法は、「[よくある質問](#よくある質問)」を参照してください。
 
