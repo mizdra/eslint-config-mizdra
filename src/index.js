@@ -3,7 +3,8 @@
 
 /** @satisfies {import('eslint').Linter.BaseConfig} */
 module.exports = /** @type {const} */ ({
-  extends: ['eslint:recommended', 'plugin:import-x/recommended'],
+  plugins: ['import-x'],
+  extends: ['eslint:recommended'],
   reportUnusedDisableDirectives: true,
   parserOptions: {
     // 現代では type="script" な環境で JS を書くことはまずないので、
