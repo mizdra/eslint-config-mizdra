@@ -16,7 +16,7 @@ npm i -D @mizdra/eslint-config-mizdra eslint
 // @ts-check
 import mizdra from '@mizdra/eslint-config-mizdra/flat';
 
-/** @type {import('eslint').Linter.FlatConfig[]} */
+/** @type {import('eslint').Linter.Config[]} */
 export default [
   { ignores: ['**/dist'] },
   ...mizdra.baseConfigs,

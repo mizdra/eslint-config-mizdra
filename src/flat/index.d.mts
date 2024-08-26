@@ -1,4 +1,4 @@
-import type { ESLint, Linter } from 'eslint';
+import type { Linter } from 'eslint';
 
 interface ESLintPluginMizdra {
   baseConfigs: Linter.FlatConfig[];
@@ -8,4 +8,5 @@ interface ESLintPluginMizdra {
   prettierConfig: Linter.FlatConfig;
 }
 declare const mizdra: ESLintPluginMizdra;
+// eslint-disable-next-line import-x/no-default-export
 export default mizdra;

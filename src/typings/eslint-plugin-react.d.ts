@@ -1,14 +1,15 @@
 declare module 'eslint-plugin-react' {
-  import { ESLint } from 'eslint';
+  import { Linter } from 'eslint';
   interface ReactPlugin {
     configs: {
       flat: {
-        'recommended': ESLint.Linter.Config;
-        'all': ESLint.Linter.Config;
-        'jsx-runtime': ESLint.Linter.Config;
+        'recommended': Linter.Config;
+        'all': Linter.Config;
+        'jsx-runtime': Linter.Config;
       };
     };
   }
-  const plugn: ReactPlugin;
-  export default plugn;
+  const plugin: ReactPlugin;
+  // eslint-disable-next-line import-x/no-default-export
+  export default plugin;
 }
