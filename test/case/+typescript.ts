@@ -1,5 +1,6 @@
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-const a = 1; // @typescript-eslint が機能している
+const promise = Promise.resolve();
+// eslint-disable-next-line @typescript-eslint/no-floating-promises, @typescript-eslint/no-unused-expressions -- @typescript-eslint が機能している
+promise;
 
 export {};
 // eslint-disable-next-line import-x/no-default-export
