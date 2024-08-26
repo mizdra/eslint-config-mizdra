@@ -5,7 +5,7 @@ import { commonjsPattern, compat, jsPattern, tsPattern } from '../util.mjs';
 
 export const baseConfigs = /** @satisfies {import('eslint').Linter.Config[]} */ ([
   { ...js.configs.recommended, files: [jsPattern, tsPattern] },
-  ...compat.extends('plugin:import-x/recommended').map((config) => ({ ...config, files: [jsPattern, tsPattern] })),
+  ...compat.plugins('import-x').map((config) => ({ ...config, files: [jsPattern, tsPattern] })),
   {
     name: '@mizdra/eslint-config-mizdra/base',
     files: [jsPattern, tsPattern],
