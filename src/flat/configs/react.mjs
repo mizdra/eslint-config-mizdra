@@ -1,3 +1,4 @@
+import { fixupConfigRules } from '@eslint/compat';
 import reactPlugin from 'eslint-plugin-react';
 
 import globals from 'globals';
@@ -7,7 +8,7 @@ import { compat, jsPattern, tsPattern } from '../util.mjs';
 export const reactConfigs = /** @satisfies {import('eslint').Linter.Config[]} */ ([
   reactPlugin.configs.flat.recommended,
   reactPlugin.configs.flat['jsx-runtime'],
-  ...compat.extends('plugin:react-hooks/recommended'),
+  ...fixupConfigRules(compat.extends('plugin:react-hooks/recommended')),
   {
     name: '@mizdra/eslint-config-mizdra/react',
     languageOptions: {
