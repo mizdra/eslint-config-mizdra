@@ -91,6 +91,7 @@ module.exports = /** @type {const} */ ({
     '@typescript-eslint/no-useless-constructor': 2,
     // tsc の `noUnusedLocals`/`noUnusedParameters` を使うように
     'no-unused-vars': 0,
+    '@typescript-eslint/no-unused-vars': 0,
     // 煩すぎるので off
     '@typescript-eslint/no-unsafe-argument': 0,
     // error だと未定義関数を呼び出した際に、実引数の部分まで赤く線が引かれて煩すぎる。
