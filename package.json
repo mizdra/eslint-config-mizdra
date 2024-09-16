@@ -31,15 +31,11 @@
     "node": ">=18.0.0"
   },
   "peerDependencies": {
-    "@types/eslint": ">=8.56.11",
-    "eslint": ">=8.50.0",
+    "eslint": ">=9.10.0",
     "prettier": ">=2.0.5",
     "typescript": ">=3.9.3"
   },
   "peerDependenciesMeta": {
-    "@types/eslint": {
-      "optional": true
-    },
     "eslint": {
       "optional": false
     },
