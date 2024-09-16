@@ -1,4 +1,5 @@
 import globals from 'globals';
+
 import legacyNode from '../../+node.js';
 import { compat, jsPattern, tsPattern } from '../util.mjs';
 

@@ -1,8 +1,8 @@
 import js from '@eslint/js';
+import simpleImportSort from 'eslint-plugin-simple-import-sort';
 
 import legacyBase from '../../index.js';
 import { commonjsPattern, jsPattern, tsPattern } from '../util.mjs';
-import simpleImportSort from 'eslint-plugin-simple-import-sort';
 
 export const baseConfigs = /** @satisfies {import('eslint').Linter.Config[]} */ ([
   { ...js.configs.recommended, files: [jsPattern, tsPattern] },
