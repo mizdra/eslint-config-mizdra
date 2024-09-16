@@ -4,11 +4,6 @@
   "description": "ESLint config for @mizdra",
   "type": "module",
   "exports": {
-    ".": "./src/index.cjs",
-    "./+node": "./src/+node.cjs",
-    "./+typescript": "./src/+typescript.cjs",
-    "./+react": "./src/+react.cjs",
-    "./+prettier": "./src/+prettier.cjs",
     "./flat": {
       "import": {
         "types": "./src/flat/index.d.ts",
