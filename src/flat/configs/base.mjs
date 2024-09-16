@@ -2,9 +2,11 @@ import js from '@eslint/js';
 
 import legacyBase from '../../index.js';
 import { commonjsPattern, jsPattern, tsPattern } from '../util.mjs';
+import simpleImportSort from 'eslint-plugin-simple-import-sort';
 
 export const baseConfigs = /** @satisfies {import('eslint').Linter.Config[]} */ ([
   { ...js.configs.recommended, files: [jsPattern, tsPattern] },
+  { plugins: { 'simple-import-sort': simpleImportSort } },
   {
     name: '@mizdra/eslint-config-mizdra/base',
     files: [jsPattern, tsPattern],

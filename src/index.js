@@ -4,6 +4,7 @@
 /** @satisfies {import('eslint').Linter.BaseConfig} */
 module.exports = /** @type {const} */ ({
   extends: ['eslint:recommended'],
+  plugins: ['simple-import-sort'],
   reportUnusedDisableDirectives: true,
   parserOptions: {
     // 現代では type="script" な環境で JS を書くことはまずないので、
@@ -166,6 +167,9 @@ module.exports = /** @type {const} */ ({
     // ** Layout & Formatting  **
     // ASI による複雑怪奇な挙動に付き合わなくて済むよう、セミコロンを必須とする
     'semi': [2, 'always'],
+
+    // ***** eslint-plugin-import-x *****
+    'simple-import-sort/imports': 2,
 
     // ***** Opinionated *****
     // コーディングスタイル統一のため、`const fn = function() { ... }` 形式の関数定義を禁止する。
