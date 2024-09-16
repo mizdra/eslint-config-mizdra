@@ -14,7 +14,7 @@ npm i -D @mizdra/eslint-config-mizdra eslint
 
 ```javascript
 // @ts-check
-import mizdra from '@mizdra/eslint-config-mizdra/flat';
+import mizdra from '@mizdra/eslint-config-mizdra';
 
 /** @type {import('eslint').Linter.Config[]} */
 export default [
@@ -35,30 +35,7 @@ export default [
 
 ### legacy config から使う場合
 
-```javascript
-// @ts-check
-
-/** @type {import('eslint').Linter.BaseConfig} */
-module.exports = {
-  root: true,
-  extends: ['@mizdra/mizdra', '@mizdra/mizdra/+react', '@mizdra/mizdra/+prettier'],
-  parserOptions: { ecmaVersion: 2021 },
-  env: { es2021: true, node: true, browser: true, jest: true },
-  rules: {
-    // プロジェクト固有のルールをここに書く
-  },
-  overrides: [
-    // For TypeScript
-    {
-      files: ['*.ts', '*.tsx', '*.cts', '*.mts'],
-      extends: ['@mizdra/mizdra/+typescript', '@mizdra/mizdra/+prettier'],
-      rules: {
-        // TypeScript 向けのプロジェクト固有のルールをここに書く
-      },
-    },
-  ],
-};
-```
+`@mizdra/eslint-config-mizdra@5.0.0` から Legacy Config サポートが削除されました。Legacy Config を使いたい場合は、`@mizdra/eslint-config-mizdra@^4.0.0` を使ってください。
 
 ## 組み込みの 3rd-party packages
 
@@ -76,30 +53,28 @@ module.exports = {
 
 ## 利用可能な config
 
-### `@mizdra/mizdra`
+### `baseConfigs`
 
-基本的な rule をまとめた config です。利用するには、`parserOptions.ecmaVersion` と `env.es20XX` を指定する必要があります。
+基本的な rule をまとめた config です。
 
 ```js
-module.exports = {
-  root: true,
-  extends: ['@mizdra/mizdra'],
-  parserOptions: { ecmaVersion: 2019 }, // required
-  env: { es2019: true }, // required
-};
+// @ts-check
+import mizdra from '@mizdra/eslint-config-mizdra';
+
+/** @type {import('eslint').Linter.Config[]} */
+export default [...mizdra.baseConfigs];
 ```
 
-### `@mizdra/mizdra/+node`
+### `nodeConfigs`
 
 Node.js で実行されるコード向けの config です。利用するには、[`eslint-plugin-n` のドキュメントに従って Node.js のバージョンを指定しておく](https://github.com/eslint-community/eslint-plugin-n#configured-nodejs-version-range)必要があります。
 
 ```js
-module.exports = {
-  root: true,
-  extends: ['@mizdra/mizdra', '@mizdra/mizdra/+node'],
-  parserOptions: { ecmaVersion: 2019 },
-  env: { es2019: true },
-};
+// @ts-check
+import mizdra from '@mizdra/eslint-config-mizdra';
+
+/** @type {import('eslint').Linter.Config[]} */
+export default [...mizdra.baseConfigs, ...mizdra.nodeConfigs];
 ```
 
 ```json
@@ -113,63 +88,57 @@ module.exports = {
 }
 ```
 
-### `@mizdra/mizdra/+typescript`
+### `typescriptConfigs`
 
-TypeScript 向けの config です。利用するには、`overrides` オプションを使用し、TypeScript のコードだけに config が適用されるようにしてください。
+TypeScript 向けの config です。
 
 ```js
-module.exports = {
-  root: true,
-  extends: ['@mizdra/mizdra'],
-  parserOptions: { ecmaVersion: 2019 },
-  env: { es2019: true },
-  overrides: [
-    {
-      files: ['*.ts', '*.tsx', '*.cts', '*.mts'],
-      // NOTE: prettier を利用する場合は @mizdra/mizdra/+typescript の後に
-      // @mizdra/mizdra/+prettier の extends も必要です。
-      extends: ['@mizdra/mizdra/+typescript'],
-      rules: {
-        // TypeScript 向けのプロジェクト固有のルールをここに書く
-      },
+// @ts-check
+import mizdra from '@mizdra/eslint-config-mizdra';
+
+/** @type {import('eslint').Linter.Config[]} */
+export default [
+  ...mizdra.baseConfigs,
+  ...mizdra.typescriptConfigs,
+  {
+    files: ['**/*.{ts,tsx,cts,mts}'],
+    rules: {
+      // TypeScript 向けのプロジェクト固有のルールをここに書く
     },
-  ],
-};
+  },
+];
 ```
 
 ### `@mizdra/mizdra/+react`
 
-React を使っているコード向けの config です。`env.browser` を `true` にして利用することを推奨しています。
+React を使っているコード向けの config です。
 
 ```js
-module.exports = {
-  root: true,
-  extends: ['@mizdra/mizdra', '@mizdra/mizdra/+react'],
-  parserOptions: { ecmaVersion: 2019 },
-  env: {
-    es2019: true,
-    browser: true, // recommended
-  },
-};
+// @ts-check
+import mizdra from '@mizdra/eslint-config-mizdra';
+
+/** @type {import('eslint').Linter.Config[]} */
+export default [...mizdra.baseConfigs, ...mizdra.reactConfigs];
 ```
 
 ### `@mizdra/mizdra/+prettier`
 
-Prettier を使っているコード向けの config です。全ての config の最後に extends することを想定しています。
+Prettier を使っているコード向けの config です。config list の最後に設定することを想定しています。
 
 ```js
-module.exports = {
-  root: true,
-  extends: ['@mizdra/mizdra', '@mizdra/mizdra/+prettier'],
-  parserOptions: { ecmaVersion: 2019 },
-  env: { es2019: true },
-  overrides: [
-    {
-      files: ['*.ts', '*.tsx', '*.cts', '*.mts'],
-      extends: ['@mizdra/mizdra/+typescript', '@mizdra/mizdra/+prettier'],
-    },
-  ],
-};
+// @ts-check
+import mizdra from '@mizdra/eslint-config-mizdra';
+
+/** @type {import('eslint').Linter.Config[]} */
+export default [
+  { ignores: ['**/dist'] },
+  ...mizdra.baseConfigs,
+  ...mizdra.typescriptConfigs,
+  {
+    // Write your favorite configs
+  },
+  mizdra.prettierConfig,
+];
 ```
 
 ## よくある質問
@@ -195,7 +164,7 @@ npm と pnpm では、`package.json` の `overrides` フィールドを使って
 // package.json
 {
   "overrides": {
-    "@typescript-eslint/parser": "^4.0.0"
+    "typescript-eslint": "^8.5.0"
   }
 }
 ```
