@@ -1,14 +1,11 @@
 // @ts-check
-/* eslint-disable */
-
-import mizdra from '../src/flat/index.mjs';
+import mizdra from './src/flat/index.js';
 
 /** @type {import('eslint').Linter.Config[]} */
 export default [
-  { ignores: ['.eslintrc.js', 'eslint.config.mjs'] },
+  { ignores: ['test'] },
   ...mizdra.baseConfigs,
   ...mizdra.typescriptConfigs,
   ...mizdra.nodeConfigs,
-  ...mizdra.reactConfigs,
   mizdra.prettierConfig,
 ];
