@@ -2,16 +2,17 @@
   "name": "@mizdra/eslint-config-mizdra",
   "version": "4.0.1",
   "description": "ESLint config for @mizdra",
+  "type": "module",
   "exports": {
-    ".": "./src/index.js",
-    "./+node": "./src/+node.js",
-    "./+typescript": "./src/+typescript.js",
-    "./+react": "./src/+react.js",
-    "./+prettier": "./src/+prettier.js",
+    ".": "./src/index.cjs",
+    "./+node": "./src/+node.cjs",
+    "./+typescript": "./src/+typescript.cjs",
+    "./+react": "./src/+react.cjs",
+    "./+prettier": "./src/+prettier.cjs",
     "./flat": {
       "import": {
-        "types": "./src/flat/index.d.mts",
-        "default": "./src/flat/index.mjs"
+        "types": "./src/flat/index.d.ts",
+        "default": "./src/flat/index.js"
       }
     }
   },

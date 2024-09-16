@@ -1,7 +1,7 @@
 import globals from 'globals';
 
-import legacyNode from '../../+node.js';
-import { compat, jsPattern, tsPattern } from '../util.mjs';
+import legacyNode from '../../+node.cjs';
+import { compat, jsPattern, tsPattern } from '../util.js';
 
 export const nodeConfigs = /** @satisfies {import('eslint').Linter.Config[]} */ ([
   ...compat.extends('plugin:n/recommended'),

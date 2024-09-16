@@ -1,6 +1,6 @@
 import eslintConfigPrettier from 'eslint-config-prettier';
 
-import { jsPattern, tsPattern } from '../util.mjs';
+import { jsPattern, tsPattern } from '../util.js';
 
 export const prettierConfig = /** @satisfies {import('eslint').Linter.Config} */ ({
   ...eslintConfigPrettier,
