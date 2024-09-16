@@ -5,14 +5,19 @@ import { commonjsPattern, jsPattern, tsPattern } from '../util.js';
 
 /** @type {import('eslint').Linter.Config[]} */
 export const baseConfigs = [
-  { ...js.configs.recommended, files: [jsPattern, tsPattern] },
-  { plugins: { 'simple-import-sort': simpleImportSort } },
+  // for all languages
   {
     name: '@mizdra/eslint-config-mizdra/base',
-    files: [jsPattern, tsPattern],
     linterOptions: {
       reportUnusedDisableDirectives: 'error',
     },
+  },
+  // for js/ts
+  { ...js.configs.recommended, files: [jsPattern, tsPattern] },
+  {
+    name: '@mizdra/eslint-config-mizdra/base/js',
+    files: [jsPattern, tsPattern],
+    plugins: { 'simple-import-sort': simpleImportSort },
     languageOptions: {
       sourceType: 'module',
     },
