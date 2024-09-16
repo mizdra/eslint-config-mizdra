@@ -1,16 +1,11 @@
 import type { Linter } from 'eslint';
 
 interface ESLintPluginMizdra {
-  // eslint-disable-next-line @typescript-eslint/no-deprecated
-  baseConfigs: Linter.FlatConfig[];
-  // eslint-disable-next-line @typescript-eslint/no-deprecated
-  typescriptConfigs: Linter.FlatConfig[];
-  // eslint-disable-next-line @typescript-eslint/no-deprecated
-  reactConfigs: Linter.FlatConfig[];
-  // eslint-disable-next-line @typescript-eslint/no-deprecated
-  nodeConfigs: Linter.FlatConfig[];
-  // eslint-disable-next-line @typescript-eslint/no-deprecated
-  prettierConfig: Linter.FlatConfig;
+  baseConfigs: Linter.Config[];
+  typescriptConfigs: Linter.Config[];
+  reactConfigs: Linter.Config[];
+  nodeConfigs: Linter.Config[];
+  prettierConfig: Linter.Config;
 }
 declare const mizdra: ESLintPluginMizdra;
 export default mizdra;
