@@ -12,5 +12,4 @@ const mizdra = {
   prettierConfig,
 };
 
-// eslint-disable-next-line import-x/no-default-export
 export default mizdra;

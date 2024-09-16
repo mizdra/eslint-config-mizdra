@@ -3,8 +3,8 @@
 
 /** @satisfies {import('eslint').Linter.BaseConfig} */
 module.exports = /** @type {const} */ ({
-  plugins: ['import-x'],
   extends: ['eslint:recommended'],
+  plugins: ['simple-import-sort'],
   reportUnusedDisableDirectives: true,
   parserOptions: {
     // 現代では type="script" な環境で JS を書くことはまずないので、
@@ -169,30 +169,7 @@ module.exports = /** @type {const} */ ({
     'semi': [2, 'always'],
 
     // ***** eslint-plugin-import-x *****
-
-    // ** Helpful warnings **
-    // @deprecated の付いた item の import を警告
-    'import-x/no-deprecated': 2,
-    // 可変な変数の export はミスの可能性が高いので禁止
-    'import-x/no-mutable-exports': 2,
-
-    // ** Static analysis **
-    // 絶対パスによる import はミスのはずなので禁止
-    'import-x/no-absolute-path': 2,
-    // import が解決可能かどうかは、bundler や tsserver に任せれば良いので off
-    'import-x/no-unresolved': 0,
-
-    // ** Style guide **
-    // import はファイルの先頭にまとめる
-    'import-x/first': 2,
-    // default export は tsserver と相性が悪いので禁止する。
-    // `React.lazy` を使いたいなど、どうしても default export したい場合は適時 disable してもらうことを想定。
-    // ref: https://typescript-jp.gitbook.io/deep-dive/main-1/defaultisbad
-    'import-x/no-default-export': 2,
-    // import 文の並びについて思考するのに時間を費やすのは勿体ないので、一律でソートしてしまう
-    'import-x/order': [2, { alphabetize: { order: 'asc' } }],
-    // package.json への追加忘れを防止
-    'import-x/no-extraneous-dependencies': 2,
+    'simple-import-sort/imports': 2,
 
     // ***** Opinionated *****
     // コーディングスタイル統一のため、`const fn = function() { ... }` 形式の関数定義を禁止する。
