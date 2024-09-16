@@ -67,7 +67,6 @@ module.exports = {
 - [`@typescript-eslint/eslint-plugin`](https://www.npmjs.com/package/@typescript-eslint/eslint-plugin)
 - [`@typescript-eslint/parser`](https://www.npmjs.com/package/@typescript-eslint/parser)
 - [`eslint-config-prettier`](https://www.npmjs.com/package/eslint-config-prettier)
-- [`eslint-plugin-import-x`](https://github.com/un-ts/eslint-plugin-import-x)
 - [`eslint-plugin-n`](https://www.npmjs.com/package/eslint-plugin-n)
 - [`eslint-plugin-react`](https://www.npmjs.com/package/eslint-plugin-react)
 - [`eslint-plugin-react-hooks`](https://www.npmjs.com/package/eslint-plugin-react-hooks)

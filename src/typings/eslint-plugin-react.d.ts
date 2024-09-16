@@ -10,6 +10,5 @@ declare module 'eslint-plugin-react' {
     };
   }
   const plugin: ReactPlugin;
-  // eslint-disable-next-line import-x/no-default-export
   export default plugin;
 }
