@@ -28,6 +28,10 @@ export const typescriptConfigs = [
       '@typescript-eslint/ban-ts-comment': 0,
       // コーディングスタイル統一のため、`<T> expr` 形式の型アサーションを禁止して `expr as T` の使用を推奨する
       '@typescript-eslint/consistent-type-assertions': 2,
+      // tsc の `isolatedModules` 有効時にエラーにならないよう、型の export には `export type` を使うよう強制する
+      '@typescript-eslint/consistent-type-exports': 'error',
+      // tsc の `isolatedModules` 有効時にエラーにならないよう、型の import には `import type` を使うよう強制する
+      '@typescript-eslint/consistent-type-imports': 'error',
       // コーディングスタイル統一のため、命名規則を設ける
       'camelcase': 0,
       '@typescript-eslint/naming-convention': [
