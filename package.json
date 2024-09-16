@@ -6,8 +6,8 @@
   "exports": {
     "./flat": {
       "import": {
-        "types": "./src/flat/index.d.ts",
-        "default": "./src/flat/index.js"
+        "types": "./src/index.d.ts",
+        "default": "./src/index.js"
       }
     }
   },

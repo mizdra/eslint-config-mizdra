@@ -1,6 +1,6 @@
 // @ts-check
 
-import mizdra from '../src/flat/index.js';
+import mizdra from '../src/index.js';
 
 /** @type {import('eslint').Linter.Config[]} */
 export default [
