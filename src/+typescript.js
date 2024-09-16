@@ -78,6 +78,8 @@ module.exports = /** @type {const} */ ({
         format: null,
       },
     ],
+    // 非推奨の API の仕様を極力避けてほしいので、非推奨の API の使用を禁止する
+    '@typescript-eslint/no-deprecated': 2,
     // 可読性及びコードリーディングスタイルの統一のため、promise を返す関数では async を付けることを強制する
     // require type information
     '@typescript-eslint/promise-function-async': 2,
