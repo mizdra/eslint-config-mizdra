@@ -4,7 +4,8 @@ import globals from 'globals';
 
 import { compat, jsPattern, tsPattern } from '../util.js';
 
-export const reactConfigs = /** @satisfies {import('eslint').Linter.Config[]} */ ([
+/** @type {import('eslint').Linter.Config[]} */
+export const reactConfigs = [
   reactPlugin.configs.flat.recommended,
   reactPlugin.configs.flat['jsx-runtime'],
   ...fixupConfigRules(compat.extends('plugin:react-hooks/recommended')),
@@ -21,7 +22,7 @@ export const reactConfigs = /** @satisfies {import('eslint').Linter.Config[]} */
         version: 'detect',
       },
     },
-    rules: {
+    rules: /** @satisfies {import('eslint').Linter.RulesRecord} */ ({
       // react
       // button タグの type 属性は省略すると文脈によってデフォルト値が変わってややこしいので、指定を必須にする
       'react/button-has-type': 2,
@@ -39,6 +40,6 @@ export const reactConfigs = /** @satisfies {import('eslint').Linter.Config[]} */
       'react/self-closing-comp': 2,
       // 現代では TypeScript で型を制限することが多いので、propTypes は使わない
       'react/prop-types': 0,
-    },
+    }),
   },
-]).map((config) => ({ ...config, files: [jsPattern, tsPattern] }));
+].map((config) => ({ ...config, files: [jsPattern, tsPattern] }));
