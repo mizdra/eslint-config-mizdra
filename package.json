@@ -36,9 +36,6 @@
     "typescript": ">=3.9.3"
   },
   "peerDependenciesMeta": {
-    "eslint": {
-      "optional": false
-    },
     "prettier": {
       "optional": true
     },
