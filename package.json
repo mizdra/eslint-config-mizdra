@@ -1,6 +1,6 @@
 {
   "name": "@mizdra/eslint-config-mizdra",
-  "version": "4.0.1",
+  "version": "5.0.0",
   "description": "ESLint config for @mizdra",
   "type": "module",
   "exports": {
