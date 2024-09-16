@@ -109,7 +109,7 @@ export default [
 ];
 ```
 
-### `@mizdra/mizdra/+react`
+### `reactConfigs`
 
 React を使っているコード向けの config です。
 
@@ -121,7 +121,7 @@ import mizdra from '@mizdra/eslint-config-mizdra';
 export default [...mizdra.baseConfigs, ...mizdra.reactConfigs];
 ```
 
-### `@mizdra/mizdra/+prettier`
+### `prettierConfig`
 
 Prettier を使っているコード向けの config です。config list の最後に設定することを想定しています。
 
