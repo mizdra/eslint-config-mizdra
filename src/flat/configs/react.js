@@ -2,7 +2,6 @@ import { fixupConfigRules } from '@eslint/compat';
 import reactPlugin from 'eslint-plugin-react';
 import globals from 'globals';
 
-import legacyReact from '../../+react.cjs';
 import { compat, jsPattern, tsPattern } from '../util.js';
 
 export const reactConfigs = /** @satisfies {import('eslint').Linter.Config[]} */ ([
