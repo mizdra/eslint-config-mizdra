@@ -168,7 +168,3 @@ npm と pnpm では、`package.json` の `overrides` フィールドを使って
   }
 }
 ```
-
-## Special Thanks
-
-このパッケージは [teppeis/eslint-config-teppeis](https://github.com/teppeis/eslint-config-teppeis) を参考に設計されました。
