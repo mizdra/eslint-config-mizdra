@@ -1,10 +1,11 @@
+import n from 'eslint-plugin-n';
 import globals from 'globals';
 
-import { compat, jsPattern, tsPattern } from '../util.js';
+import { jsPattern, tsPattern } from '../util.js';
 
 /** @type {import('eslint').Linter.Config[]} */
 export const nodeConfigs = [
-  ...compat.extends('plugin:n/recommended'),
+  n.configs['flat/recommended'],
   {
     name: '@mizdra/eslint-config-mizdra/node',
     languageOptions: {
