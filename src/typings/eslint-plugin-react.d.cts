@@ -1,5 +1,5 @@
 declare module 'eslint-plugin-react' {
-  import { Linter } from 'eslint';
+  import type { Linter } from 'eslint';
   interface ReactPlugin {
     configs: {
       flat: {
