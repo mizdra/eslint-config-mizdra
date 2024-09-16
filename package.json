@@ -4,7 +4,7 @@
   "description": "ESLint config for @mizdra",
   "type": "module",
   "exports": {
-    "./flat": {
+    ".": {
       "import": {
         "types": "./src/index.d.ts",
         "default": "./src/index.js"
