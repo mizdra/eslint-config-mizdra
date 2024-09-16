@@ -3,7 +3,8 @@ import simpleImportSort from 'eslint-plugin-simple-import-sort';
 
 import { commonjsPattern, jsPattern, tsPattern } from '../util.js';
 
-export const baseConfigs = /** @satisfies {import('eslint').Linter.Config[]} */ ([
+/** @type {import('eslint').Linter.Config[]} */
+export const baseConfigs = [
   { ...js.configs.recommended, files: [jsPattern, tsPattern] },
   { plugins: { 'simple-import-sort': simpleImportSort } },
   {
@@ -198,4 +199,4 @@ export const baseConfigs = /** @satisfies {import('eslint').Linter.Config[]} */ 
       },
     },
   },
-]);
+];

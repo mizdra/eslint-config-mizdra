@@ -7,7 +7,8 @@ const recommendedTypeChecked = /** @type {import('eslint').Linter.Config[]} */ (
   tseslint.configs.recommendedTypeChecked
 );
 
-export const typescriptConfigs = /** @satisfies {import('eslint').Linter.Config[]} */ ([
+/** @type {import('eslint').Linter.Config[]} */
+export const typescriptConfigs = [
   ...recommendedTypeChecked,
   {
     name: '@mizdra/eslint-config-mizdra/typescript',
@@ -16,7 +17,7 @@ export const typescriptConfigs = /** @satisfies {import('eslint').Linter.Config[
         projectService: true,
       },
     },
-    rules: {
+    rules: /** @satisfies {import('eslint').Linter.RulesRecord} */ ({
       // ***** eslint *****
 
       // ***** @typescript-eslint *****
@@ -114,6 +115,6 @@ export const typescriptConfigs = /** @satisfies {import('eslint').Linter.Config[
       '@typescript-eslint/no-unsafe-member-access': 0,
       // 煩すぎるので off
       '@typescript-eslint/no-unsafe-return': 0,
-    },
+    }),
   },
-]).map((config) => ({ ...config, files: [tsPattern] }));
+].map((config) => ({ ...config, files: [tsPattern] }));
