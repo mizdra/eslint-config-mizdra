@@ -65,6 +65,27 @@ import mizdra from '@mizdra/eslint-config-mizdra';
 export default [...mizdra.baseConfigs];
 ```
 
+### `typescriptConfigs`
+
+TypeScript 向けの config です。
+
+```js
+// @ts-check
+import mizdra from '@mizdra/eslint-config-mizdra';
+
+/** @type {import('eslint').Linter.Config[]} */
+export default [
+  ...mizdra.baseConfigs,
+  ...mizdra.typescriptConfigs,
+  {
+    files: ['**/*.{ts,tsx,cts,mts}'],
+    rules: {
+      // TypeScript 向けのプロジェクト固有のルールをここに書く
+    },
+  },
+];
+```
+
 ### `nodeConfigs`
 
 Node.js で実行されるコード向けの config です。利用するには、[`eslint-plugin-n` のドキュメントに従って Node.js のバージョンを指定しておく](https://github.com/eslint-community/eslint-plugin-n#configured-nodejs-version-range)必要があります。
@@ -86,27 +107,6 @@ export default [...mizdra.baseConfigs, ...mizdra.nodeConfigs];
     "node": ">=16.0.0" // required
   }
 }
-```
-
-### `typescriptConfigs`
-
-TypeScript 向けの config です。
-
-```js
-// @ts-check
-import mizdra from '@mizdra/eslint-config-mizdra';
-
-/** @type {import('eslint').Linter.Config[]} */
-export default [
-  ...mizdra.baseConfigs,
-  ...mizdra.typescriptConfigs,
-  {
-    files: ['**/*.{ts,tsx,cts,mts}'],
-    rules: {
-      // TypeScript 向けのプロジェクト固有のルールをここに書く
-    },
-  },
-];
 ```
 
 ### `reactConfigs`
