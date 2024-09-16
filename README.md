@@ -39,15 +39,15 @@ export default [
 
 ## 組み込みの 3rd-party packages
 
-利便性のため、`eslint-config-mizdra` は以下のパッケージを [`dependencies`](https://docs.npmjs.com/cli/v8/configuring-npm/package-json#dependencies) としてインストールします。そのため、これらのパッケージを `eslint-config-mizdra` を利用するプロジェクトの `devDependencies` としてインストールする必要はありません。
+利便性のため、`eslint-config-mizdra` は以下の ESLint Plugins を [`dependencies`](https://docs.npmjs.com/cli/v8/configuring-npm/package-json#dependencies) としてインストールします。そのため、`eslint-config-mizdra` を利用するプロジェクトの `devDependencies` にこれらを追加する必要はありません。
 
 - [`@typescript-eslint/eslint-plugin`](https://www.npmjs.com/package/@typescript-eslint/eslint-plugin)
-- [`@typescript-eslint/parser`](https://www.npmjs.com/package/@typescript-eslint/parser)
-- [`eslint-config-prettier`](https://www.npmjs.com/package/eslint-config-prettier)
 - [`eslint-plugin-n`](https://www.npmjs.com/package/eslint-plugin-n)
 - [`eslint-plugin-react`](https://www.npmjs.com/package/eslint-plugin-react)
 - [`eslint-plugin-react-hooks`](https://www.npmjs.com/package/eslint-plugin-react-hooks)
 - [`eslint-plugin-simple-import-sort`](https://www.npmjs.com/package/eslint-plugin-simple-import-sort)
+
+その他にもいくつかのパッケージを `dependencies` としてインストールしています。詳しくは [package.json](./package.json) の `dependencies` フィールドを参照してください。
 
 インストールされるバージョンは、`eslint-config-mizdra` をインストールした時点で最も最新のものです。一度インストールされると、package-lock.json などによりバージョンが固定されます。最新のバージョンにアップデートする方法や、好きなバージョンに固定する方法は、「[よくある質問](#よくある質問)」を参照してください。
 
