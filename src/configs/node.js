@@ -1,6 +1,5 @@
 import globals from 'globals';
 
-import legacyNode from '../../+node.cjs';
 import { compat, jsPattern, tsPattern } from '../util.js';
 
 export const nodeConfigs = /** @satisfies {import('eslint').Linter.Config[]} */ ([
@@ -10,6 +9,13 @@ export const nodeConfigs = /** @satisfies {import('eslint').Linter.Config[]} */ 
     languageOptions: {
       globals: globals.node,
     },
-    rules: legacyNode.rules,
+    rules: {
+      // tsc で検知できるので off
+      'n/no-missing-import': 0,
+      // tsc で検知できるので off
+      'n/no-missing-require': 0,
+      // `import fs from 'fs'` ではなく `import fs from 'node:fs'` と書くように
+      'n/prefer-node-protocol': 2,
+    },
   },
 ]).map((config) => ({ ...config, files: [jsPattern, tsPattern] }));

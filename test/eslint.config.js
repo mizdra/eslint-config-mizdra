@@ -1,10 +1,10 @@
 // @ts-check
 
-import mizdra from '../src/flat/index.js';
+import mizdra from '../src/index.js';
 
 /** @type {import('eslint').Linter.Config[]} */
 export default [
-  { ignores: ['.eslintrc.cjs', 'eslint.config.js'] },
+  { ignores: ['eslint.config.js'] },
   ...mizdra.baseConfigs,
   ...mizdra.typescriptConfigs,
   ...mizdra.nodeConfigs,

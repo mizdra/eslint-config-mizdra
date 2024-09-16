@@ -1,8 +1,6 @@
 {
   "type": "module",
   "scripts": {
-    "lint": "run-s -c lint:*",
-    "lint:legacy-config": "ESLINT_USE_FLAT_CONFIG=false eslint -c .eslintrc.cjs .",
-    "lint:flat-config": "ESLINT_USE_FLAT_CONFIG=true eslint -c eslint.config.js ."
+    "lint": "eslint ."
   }
 }
