@@ -101,9 +101,22 @@ export const typescriptConfigs = [
       // 不要な constructor は定義しないように
       'no-useless-constructor': 0,
       '@typescript-eslint/no-useless-constructor': 2,
-      // tsc の `noUnusedLocals`/`noUnusedParameters` を使うように
+      // tsc の `noUnusedLocals` や `noUnusedParameters` でも可能だが、linter でやったほうが小回りが効く。
+      // 例えば linter では特定のファイル (コード生成成果物など) の未使用変数を無視したり、eslint-disable-next-line したりできるが、
+      // tsc だとそれは難しい。そこで tsc ではなく linter で未使用変数を検出する。
       'no-unused-vars': 0,
-      '@typescript-eslint/no-unused-vars': 0,
+      '@typescript-eslint/no-unused-vars': [
+        2,
+        {
+          args: 'all',
+          argsIgnorePattern: '^_',
+          caughtErrors: 'all',
+          caughtErrorsIgnorePattern: '^_',
+          destructuredArrayIgnorePattern: '^_',
+          varsIgnorePattern: '^_',
+          ignoreRestSiblings: true,
+        },
+      ],
       // 煩すぎるので off
       '@typescript-eslint/no-unsafe-argument': 0,
       // error だと未定義関数を呼び出した際に、実引数の部分まで赤く線が引かれて煩すぎる。
