@@ -1,6 +1,5 @@
 import js from '@eslint/js';
 import simpleImportSort from 'eslint-plugin-simple-import-sort';
-
 import { commonjsPattern, jsPattern, tsPattern } from '../util.js';
 
 /** @type {import('eslint').Linter.Config[]} */

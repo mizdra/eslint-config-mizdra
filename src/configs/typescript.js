@@ -1,5 +1,4 @@
 import tseslint from 'typescript-eslint';
-
 import { tsPattern } from '../util.js';
 
 // https://github.com/typescript-eslint/typescript-eslint/issues/9724 回避のためにキャストする

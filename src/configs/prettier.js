@@ -1,5 +1,4 @@
 import eslintConfigPrettier from 'eslint-config-prettier';
-
 import { jsPattern, tsPattern } from '../util.js';
 
 /** @type {import('eslint').Linter.Config} */
