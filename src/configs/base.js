@@ -178,8 +178,8 @@ export const baseConfigs = [
       // ASI による複雑怪奇な挙動に付き合わなくて済むよう、セミコロンを必須とする
       'semi': [2, 'always'],
 
-      // ***** eslint-plugin-import-x *****
-      'simple-import-sort/imports': 2,
+      // ***** eslint-plugin-simple-import-sort *****
+      'simple-import-sort/imports': [2, { groups: [['^\\u0000', '^node:', '^@?\\w', '^', '^\\.']] }],
 
       // ***** Opinionated *****
       // コーディングスタイル統一のため、`const fn = function() { ... }` 形式の関数定義を禁止する。
