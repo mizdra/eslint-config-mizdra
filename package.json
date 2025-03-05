@@ -44,27 +44,25 @@
     }
   },
   "dependencies": {
-    "@eslint/eslintrc": "^3.1.0",
-    "@eslint/js": ">=8.33.0",
-    "eslint-config-prettier": ">=9.1.0",
-    "eslint-plugin-n": ">=17.10.2",
-    "eslint-plugin-react": ">=7.35.0",
-    "eslint-plugin-react-hooks": ">=5.1.0-rc",
+    "@eslint/eslintrc": "^3.3.0",
+    "@eslint/js": ">=9.21.0",
+    "eslint-config-prettier": ">=10.0.2",
+    "eslint-plugin-n": ">=17.16.2",
+    "eslint-plugin-react": ">=7.37.4",
+    "eslint-plugin-react-hooks": ">=5.2.0",
     "eslint-plugin-simple-import-sort": ">=12.1.1",
-    "globals": ">=15.9.0",
-    "typescript-eslint": ">=8.5.0"
+    "globals": ">=16.0.0",
+    "typescript-eslint": ">=8.26.0"
   },
   "devDependencies": {
     "@mizdra/prettier-config-mizdra": "^2.0.0",
-    "@types/eslint__eslintrc": "^2.1.2",
-    "@types/eslint__js": "^8.42.3",
     "@types/eslint-config-prettier": "^6.11.3",
-    "@types/node": "^22.5.5",
-    "@types/react": "^18.3.5",
-    "eslint": "^9.10.0",
-    "npm-run-all2": "^6.2.3",
-    "prettier": "~3.3.3",
-    "typescript": "^5.6.2"
+    "@types/node": "^22.13.9",
+    "@types/react": "^19.0.10",
+    "eslint": "^9.21.0",
+    "npm-run-all2": "^7.0.2",
+    "prettier": "~3.5.3",
+    "typescript": "^5.8.2"
   },
   "files": [
     "src",
