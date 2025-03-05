@@ -1,6 +1,5 @@
 import reactPlugin from 'eslint-plugin-react';
 import globals from 'globals';
-
 import { compat, jsPattern, tsPattern } from '../util.js';
 
 /** @type {import('eslint').Linter.Config[]} */

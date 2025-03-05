@@ -1,6 +1,5 @@
 import n from 'eslint-plugin-n';
 import globals from 'globals';
-
 import { jsPattern, tsPattern } from '../util.js';
 
 /** @type {import('eslint').Linter.Config[]} */
