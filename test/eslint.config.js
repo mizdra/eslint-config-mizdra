@@ -1,5 +1,3 @@
-// @ts-check
-
 import { defineConfig, globalIgnores } from 'eslint/config';
 import mizdra from '../src/index.js';
 

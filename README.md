@@ -11,7 +11,6 @@ npm i -D @mizdra/eslint-config-mizdra eslint
 ## 使い方
 
 ```javascript
-// @ts-check
 import { defineConfig, globalIgnores } from 'eslint/config';
 import mizdra from '@mizdra/eslint-config-mizdra';
 
