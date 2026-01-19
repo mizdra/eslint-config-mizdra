@@ -60,8 +60,6 @@ export const baseConfigs = [
       // ** Suggestions **
       // 定数以外は camelCase で命名する
       'camelcase': [2, { ignoreDestructuring: true, ignoreGlobals: true }],
-      // 循環的複雑度が 20 を超える関数は可読性が悪いので警告
-      'complexity': [1, 20],
       // default 句を必須にする
       'default-case': 2,
       // default 句は最後に書かせる
@@ -76,8 +74,6 @@ export const baseConfigs = [
       'guard-for-in': 2,
       // 4重ネストより深いコールバックは可読性が悪いので警告
       'max-nested-callbacks': [1, 4],
-      // 引数の数は 5 以下にする
-      'max-params': [2, 5],
       // JSDoc コメント以外では単一行コメントを優先する
       'multiline-comment-style': [2, 'separate-lines'],
       // `Number` や `Symbol` などは `new` なしで使用する
