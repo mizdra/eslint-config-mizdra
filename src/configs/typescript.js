@@ -1,14 +1,9 @@
 import tseslint from 'typescript-eslint';
 import { tsPattern } from '../util.js';
 
-// https://github.com/typescript-eslint/typescript-eslint/issues/9724 回避のためにキャストする
-const recommendedTypeChecked = /** @type {import('eslint').Linter.Config[]} */ (
-  tseslint.configs.recommendedTypeChecked
-);
-
 /** @type {import('eslint').Linter.Config[]} */
 export const typescriptConfigs = [
-  ...recommendedTypeChecked,
+  ...tseslint.configs.recommendedTypeChecked,
   {
     name: '@mizdra/eslint-config-mizdra/typescript',
     languageOptions: {

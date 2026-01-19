@@ -1,12 +1,13 @@
 import reactPlugin from 'eslint-plugin-react';
+import reactHooks from 'eslint-plugin-react-hooks';
 import globals from 'globals';
-import { compat, jsPattern, tsPattern } from '../util.js';
+import { jsPattern, tsPattern } from '../util.js';
 
 /** @type {import('eslint').Linter.Config[]} */
 export const reactConfigs = [
   reactPlugin.configs.flat.recommended,
   reactPlugin.configs.flat['jsx-runtime'],
-  ...compat.extends('plugin:react-hooks/recommended'),
+  reactHooks.configs.flat.recommended,
   {
     name: '@mizdra/eslint-config-mizdra/react',
     languageOptions: {
