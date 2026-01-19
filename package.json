@@ -11,7 +11,10 @@
       }
     }
   },
-  "repository": "https://github.com/mizdra/eslint-config-mizdra",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mizdra/eslint-config-mizdra.git"
+  },
   "author": "mizdra <pp.mizdra@gmail.com>",
   "license": "MIT",
   "private": false,
