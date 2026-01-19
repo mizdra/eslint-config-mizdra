@@ -1,11 +1,11 @@
 // @ts-check
+import { defineConfig, globalIgnores } from 'eslint/config';
 import mizdra from './src/index.js';
 
-/** @type {import('eslint').Linter.Config[]} */
-export default [
-  { ignores: ['test'] },
+export default defineConfig([
+  globalIgnores(['test']),
   ...mizdra.baseConfigs,
   ...mizdra.typescriptConfigs,
   ...mizdra.nodeConfigs,
   mizdra.prettierConfig,
-];
+]);
