@@ -10,34 +10,27 @@ npm i -D @mizdra/eslint-config-mizdra eslint
 
 ## 使い方
 
-### flat config から使う場合
-
 ```javascript
 // @ts-check
+import { defineConfig, globalIgnores } from 'eslint/config';
 import mizdra from '@mizdra/eslint-config-mizdra';
 
-/** @type {import('eslint').Linter.Config[]} */
-export default [
-  { ignores: ['**/dist'] },
+export default defineConfig([
+  globalIgnores(['**/dist']),
   ...mizdra.baseConfigs,
   ...mizdra.typescriptConfigs,
   ...mizdra.nodeConfigs,
   ...mizdra.reactConfigs,
   {
-    files: ['**/*.{js,jsx,mjs,cjs}', '**/*.{ts,tsx,cts,mts}'],
     rules: {
       // Write your favorite rules
     },
   },
   mizdra.prettierConfig,
-];
+]);
 ```
 
-### legacy config から使う場合
-
-`@mizdra/eslint-config-mizdra@5.0.0` から Legacy Config サポートが削除されました。Legacy Config を使いたい場合は、`@mizdra/eslint-config-mizdra@^4.0.0` を使ってください。
-
-## 組み込みの 3rd-party packages
+## 組み込みの 3rd-party packages について
 
 利便性のため、`eslint-config-mizdra` は以下の ESLint Plugins を [`dependencies`](https://docs.npmjs.com/cli/v8/configuring-npm/package-json#dependencies) としてインストールします。そのため、`eslint-config-mizdra` を利用するプロジェクトの `devDependencies` にこれらを追加する必要はありません。
 
@@ -57,46 +50,13 @@ export default [
 
 基本的な rule をまとめた config です。
 
-```js
-// @ts-check
-import mizdra from '@mizdra/eslint-config-mizdra';
-
-/** @type {import('eslint').Linter.Config[]} */
-export default [...mizdra.baseConfigs];
-```
-
 ### `typescriptConfigs`
 
 TypeScript 向けの config です。
 
-```js
-// @ts-check
-import mizdra from '@mizdra/eslint-config-mizdra';
-
-/** @type {import('eslint').Linter.Config[]} */
-export default [
-  ...mizdra.baseConfigs,
-  ...mizdra.typescriptConfigs,
-  {
-    files: ['**/*.{ts,tsx,cts,mts}'],
-    rules: {
-      // TypeScript 向けのプロジェクト固有のルールをここに書く
-    },
-  },
-];
-```
-
 ### `nodeConfigs`
 
 Node.js で実行されるコード向けの config です。利用するには、[`eslint-plugin-n` のドキュメントに従って Node.js のバージョンを指定しておく](https://github.com/eslint-community/eslint-plugin-n#configured-nodejs-version-range)必要があります。
-
-```js
-// @ts-check
-import mizdra from '@mizdra/eslint-config-mizdra';
-
-/** @type {import('eslint').Linter.Config[]} */
-export default [...mizdra.baseConfigs, ...mizdra.nodeConfigs];
-```
 
 ```json
 // package.json
@@ -113,33 +73,9 @@ export default [...mizdra.baseConfigs, ...mizdra.nodeConfigs];
 
 React を使っているコード向けの config です。
 
-```js
-// @ts-check
-import mizdra from '@mizdra/eslint-config-mizdra';
-
-/** @type {import('eslint').Linter.Config[]} */
-export default [...mizdra.baseConfigs, ...mizdra.reactConfigs];
-```
-
 ### `prettierConfig`
 
-Prettier を使っているコード向けの config です。config list の最後に設定することを想定しています。
-
-```js
-// @ts-check
-import mizdra from '@mizdra/eslint-config-mizdra';
-
-/** @type {import('eslint').Linter.Config[]} */
-export default [
-  { ignores: ['**/dist'] },
-  ...mizdra.baseConfigs,
-  ...mizdra.typescriptConfigs,
-  {
-    // Write your favorite configs
-  },
-  mizdra.prettierConfig,
-];
-```
+Prettier を使っているコード向けの config です。必ず config list の最後に設定してください。
 
 ## よくある質問
 
